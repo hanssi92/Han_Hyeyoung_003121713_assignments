@@ -72,7 +72,4 @@ public class Person {
     public void setBankAccount(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }
-
-    
-    
 }

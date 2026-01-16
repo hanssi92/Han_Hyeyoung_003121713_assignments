@@ -26,21 +26,134 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        splitPane = new javax.swing.JSplitPane();
+        menuPanel = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
+        btnCreatePerson = new javax.swing.JButton();
+        btnViewPerson = new javax.swing.JButton();
+        btnCreateHomeAddress = new javax.swing.JButton();
+        btnViewHomeAddress = new javax.swing.JButton();
+        btnCreateLocalAddress = new javax.swing.JButton();
+        btnViewLocalAddress = new javax.swing.JButton();
+        btnCreateBankAccount = new javax.swing.JButton();
+        btnViewBankAccount = new javax.swing.JButton();
+        workArea = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+        menuPanel.setBackground(new java.awt.Color(255, 204, 204));
+
+        lblTitle.setFont(new java.awt.Font("Calibri", 1, 19)); // NOI18N
+        lblTitle.setText("Person Profile");
+
+        btnCreatePerson.setText("Create Person");
+        btnCreatePerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreatePersonActionPerformed(evt);
+            }
+        });
+
+        btnViewPerson.setText("View Person");
+        btnViewPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewPersonActionPerformed(evt);
+            }
+        });
+
+        btnCreateHomeAddress.setText("Create Home Address");
+
+        btnViewHomeAddress.setText("View Home Address");
+
+        btnCreateLocalAddress.setText("Create Local Address");
+
+        btnViewLocalAddress.setText("View Local Address");
+
+        btnCreateBankAccount.setText("Create Bank Account");
+
+        btnViewBankAccount.setText("View Bank Account");
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnCreateBankAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnViewBankAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnCreateLocalAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnViewLocalAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnCreatePerson, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                    .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnCreateHomeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnViewHomeAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                        .addComponent(btnViewPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(24, 24, 24))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTitle)
+                .addGap(28, 28, 28)
+                .addComponent(btnCreatePerson)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnViewPerson)
+                .addGap(33, 33, 33)
+                .addComponent(btnCreateHomeAddress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnViewHomeAddress)
+                .addGap(34, 34, 34)
+                .addComponent(btnCreateLocalAddress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnViewLocalAddress)
+                .addGap(34, 34, 34)
+                .addComponent(btnCreateBankAccount)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnViewBankAccount)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
+
+        splitPane.setLeftComponent(menuPanel);
+
+        workArea.setBackground(new java.awt.Color(204, 255, 204));
+
+        javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
+        workArea.setLayout(workAreaLayout);
+        workAreaLayout.setHorizontalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 545, Short.MAX_VALUE)
+        );
+        workAreaLayout.setVerticalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 486, Short.MAX_VALUE)
+        );
+
+        splitPane.setRightComponent(workArea);
+
+        getContentPane().add(splitPane, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCreatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePersonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreatePersonActionPerformed
+
+    private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewPersonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +191,17 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreateBankAccount;
+    private javax.swing.JButton btnCreateHomeAddress;
+    private javax.swing.JButton btnCreateLocalAddress;
+    private javax.swing.JButton btnCreatePerson;
+    private javax.swing.JButton btnViewBankAccount;
+    private javax.swing.JButton btnViewHomeAddress;
+    private javax.swing.JButton btnViewLocalAddress;
+    private javax.swing.JButton btnViewPerson;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JSplitPane splitPane;
+    private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }
