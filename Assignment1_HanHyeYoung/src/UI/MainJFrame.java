@@ -122,7 +122,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCreateBankAccount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnViewBankAccount)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(menuPanel);
@@ -137,7 +137,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 486, Short.MAX_VALUE)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workArea);
