@@ -138,6 +138,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Create Home Address"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateHomeAddressActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewHomeAddress">
               <Properties>
@@ -148,6 +151,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Create Local Address"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateLocalAddressActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewLocalAddress">
               <Properties>
@@ -158,6 +164,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Create Bank Account"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateBankAccountActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewBankAccount">
               <Properties>

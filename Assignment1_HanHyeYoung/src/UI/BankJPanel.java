@@ -4,6 +4,8 @@
  */
 package UI;
 
+import Model.Person;
+
 /**
  *
  * @author Hyungs
@@ -13,8 +15,10 @@ public class BankJPanel extends javax.swing.JPanel {
     /**
      * Creates new form BankJPanel
      */
-    public BankJPanel() {
+    Person product;
+    public BankJPanel(Person p) {
         initComponents();
+        product = p;
     }
 
     /**
@@ -26,19 +30,111 @@ public class BankJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblBankAcctInformation = new javax.swing.JLabel();
+        lblAcctHldrName = new javax.swing.JLabel();
+        lblBankName = new javax.swing.JLabel();
+        lblAcctNum = new javax.swing.JLabel();
+        lblAcctType = new javax.swing.JLabel();
+        lblBalance = new javax.swing.JLabel();
+        fieldAcctHldrName = new javax.swing.JTextField();
+        fieldBankName = new javax.swing.JTextField();
+        fieldAcctNum = new javax.swing.JTextField();
+        fieldAcctType = new javax.swing.JTextField();
+        fieldBalance = new javax.swing.JTextField();
+        btnBankSave = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 255, 204));
+
+        lblBankAcctInformation.setBackground(new java.awt.Color(204, 255, 204));
+        lblBankAcctInformation.setFont(new java.awt.Font("Calibri", 1, 19)); // NOI18N
+        lblBankAcctInformation.setText("Bank Account Information");
+
+        lblAcctHldrName.setText("Account Holder Name");
+
+        lblBankName.setText("Bank Name");
+
+        lblAcctNum.setText("Account Number");
+
+        lblAcctType.setText("Account Type");
+
+        lblBalance.setText("Balance");
+
+        btnBankSave.setText("Save");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBankSave)
+                .addGap(14, 14, 14))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAcctHldrName)
+                            .addComponent(lblBankName)
+                            .addComponent(lblAcctNum)
+                            .addComponent(lblAcctType)
+                            .addComponent(lblBalance))
+                        .addGap(63, 63, 63)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(fieldAcctType, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(fieldAcctNum, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldAcctHldrName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldBankName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldBalance)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(lblBankAcctInformation)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblBankAcctInformation)
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAcctHldrName)
+                    .addComponent(fieldAcctHldrName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBankName)
+                    .addComponent(fieldBankName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAcctNum)
+                    .addComponent(fieldAcctNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAcctType)
+                    .addComponent(fieldAcctType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBalance)
+                    .addComponent(fieldBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addComponent(btnBankSave)
+                .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBankSave;
+    private javax.swing.JTextField fieldAcctHldrName;
+    private javax.swing.JTextField fieldAcctNum;
+    private javax.swing.JTextField fieldAcctType;
+    private javax.swing.JTextField fieldBalance;
+    private javax.swing.JTextField fieldBankName;
+    private javax.swing.JLabel lblAcctHldrName;
+    private javax.swing.JLabel lblAcctNum;
+    private javax.swing.JLabel lblAcctType;
+    private javax.swing.JLabel lblBalance;
+    private javax.swing.JLabel lblBankAcctInformation;
+    private javax.swing.JLabel lblBankName;
     // End of variables declaration//GEN-END:variables
 }

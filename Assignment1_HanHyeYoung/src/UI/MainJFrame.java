@@ -4,6 +4,8 @@
  */
 package UI;
 
+import Model.Person;
+
 /**
  *
  * @author Hyungs
@@ -13,8 +15,11 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    Person product;
     public MainJFrame() {
         initComponents();
+        product = new Person();
+        
     }
 
     /**
@@ -61,14 +66,29 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnCreateHomeAddress.setText("Create Home Address");
+        btnCreateHomeAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateHomeAddressActionPerformed(evt);
+            }
+        });
 
         btnViewHomeAddress.setText("View Home Address");
 
         btnCreateLocalAddress.setText("Create Local Address");
+        btnCreateLocalAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateLocalAddressActionPerformed(evt);
+            }
+        });
 
         btnViewLocalAddress.setText("View Local Address");
 
         btnCreateBankAccount.setText("Create Bank Account");
+        btnCreateBankAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateBankAccountActionPerformed(evt);
+            }
+        });
 
         btnViewBankAccount.setText("View Bank Account");
 
@@ -149,11 +169,31 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePersonActionPerformed
         // TODO add your handling code here:
+        CreateJPanel createJPanel= new CreateJPanel(product);
+        splitPane.setRightComponent(createJPanel);
     }//GEN-LAST:event_btnCreatePersonActionPerformed
 
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewPersonActionPerformed
+
+    private void btnCreateHomeAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHomeAddressActionPerformed
+        // TODO add your handling code here:
+        AddressJPanel addressJPanel = new AddressJPanel(product);
+        splitPane.setRightComponent(addressJPanel);
+    }//GEN-LAST:event_btnCreateHomeAddressActionPerformed
+
+    private void btnCreateBankAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateBankAccountActionPerformed
+        // TODO add your handling code here:
+        BankJPanel bankJPanel = new BankJPanel(product);
+        splitPane.setRightComponent(bankJPanel);
+    }//GEN-LAST:event_btnCreateBankAccountActionPerformed
+
+    private void btnCreateLocalAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateLocalAddressActionPerformed
+        // TODO add your handling code here:
+        LocaAddressJPanel localAddressJPanel = new LocaAddressJPanel(product);
+        splitPane.setRightComponent(localAddressJPanel);
+    }//GEN-LAST:event_btnCreateLocalAddressActionPerformed
 
     /**
      * @param args the command line arguments
