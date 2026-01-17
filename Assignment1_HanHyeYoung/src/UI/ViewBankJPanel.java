@@ -21,8 +21,13 @@ public class ViewBankJPanel extends javax.swing.JPanel {
         product = p;
         display();
     }
-        private void display() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    private void display() {
+        fieldAcctHldrName.setText(product.getBankAccount().getAccountHolderName());
+        fieldBankName.setText(product.getBankAccount().getBankName());
+        fieldAcctNum.setText(product.getBankAccount().getAccountNumber());
+        fieldAcctType.setText(product.getBankAccount().getAccountType());
+        fieldBalance.setText(String.valueOf(product.getBankAccount().getBalance()));
     }
 
     /**
@@ -40,11 +45,11 @@ public class ViewBankJPanel extends javax.swing.JPanel {
         lblViewAcctNum = new javax.swing.JLabel();
         lblViewAcctType = new javax.swing.JLabel();
         lblViewBalance = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        fieldAcctHldrName = new javax.swing.JTextField();
+        fieldBankName = new javax.swing.JTextField();
+        fieldAcctNum = new javax.swing.JTextField();
+        fieldAcctType = new javax.swing.JTextField();
+        fieldBalance = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -61,6 +66,12 @@ public class ViewBankJPanel extends javax.swing.JPanel {
 
         lblViewBalance.setText("Balance");
 
+        fieldAcctHldrName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldAcctHldrNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,11 +86,11 @@ public class ViewBankJPanel extends javax.swing.JPanel {
                     .addComponent(lblViewBalance))
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5))
+                    .addComponent(fieldAcctHldrName, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(fieldBankName)
+                    .addComponent(fieldAcctNum)
+                    .addComponent(fieldAcctType)
+                    .addComponent(fieldBalance))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(133, Short.MAX_VALUE)
@@ -94,34 +105,38 @@ public class ViewBankJPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewAcctHldrName)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldAcctHldrName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewBankName)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldBankName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewAcctNum)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldAcctNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewAcctType)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldAcctType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewBalance)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(234, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void fieldAcctHldrNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldAcctHldrNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldAcctHldrNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField fieldAcctHldrName;
+    private javax.swing.JTextField fieldAcctNum;
+    private javax.swing.JTextField fieldAcctType;
+    private javax.swing.JTextField fieldBalance;
+    private javax.swing.JTextField fieldBankName;
     private javax.swing.JLabel lblViewAcctHldrName;
     private javax.swing.JLabel lblViewAcctNum;
     private javax.swing.JLabel lblViewAcctType;
