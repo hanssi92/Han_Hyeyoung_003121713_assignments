@@ -155,7 +155,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         fieldLastName.setText("");
         spnAge.setValue(0);
         chkYes.setSelected(false);
-       
     }//GEN-LAST:event_btnPersonSaveActionPerformed
 
     private void chkYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkYesActionPerformed

@@ -156,8 +156,7 @@ public class LocaAddressJPanel extends javax.swing.JPanel {
         fieldLocalCity.setText("");
         fieldLocalZip.setText("");
         fieldLocalCountry.setText("");
-        
-        
+
     }//GEN-LAST:event_btnLocalSaveActionPerformed
 
     private void fieldLocalStreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldLocalStreetActionPerformed
