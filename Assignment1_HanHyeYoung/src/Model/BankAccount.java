@@ -8,7 +8,7 @@ package Model;
  *
  * @author Hyungs
  */
-class BankAccount {
+public class BankAccount {
     String accountHolderName;
     String bankName;
     String accountNumber;

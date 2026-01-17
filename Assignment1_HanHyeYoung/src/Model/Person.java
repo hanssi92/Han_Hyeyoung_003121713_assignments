@@ -16,6 +16,12 @@ public class Person {
     Address homeAddress;
     Address localAddress;
     BankAccount bankAccount;
+    
+    public Person() {
+        this.bankAccount = new BankAccount();
+        this.homeAddress = new Address ();
+        this.localAddress = new Address();
+    }
 
     public String getFirstName() {
         return firstName;
@@ -71,5 +77,9 @@ public class Person {
 
     public void setBankAccount(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
+    }
+
+    public String getLocalStreetName() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

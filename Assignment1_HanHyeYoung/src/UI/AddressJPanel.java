@@ -5,6 +5,7 @@
 package UI;
 
 import Model.Person;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -141,6 +142,25 @@ public class AddressJPanel extends javax.swing.JPanel {
 
     private void btnAddressSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddressSaveActionPerformed
         // TODO add your handling code here:
+        String homeStreetName = fieldHomeStreet.getText();
+        String HomeUnitNum = fieldHomeUnit.getText();
+        String HomeCity = fieldHomeCity.getText();
+        String homeZipcode = fieldHomeZip.getText();
+        String homeCountry = fieldHomeCountry.getText();
+        
+        product.getHomeAddress().setHomeStreetName(homeStreetName);
+        product.getHomeAddress().setHomeUnitNum(HomeUnitNum);
+        product.getHomeAddress().setHomeCity(HomeCity);
+        product.getHomeAddress().setHomeZipCode(homeZipcode);
+        product.getHomeAddress().setHomeCountry(homeCountry);
+        
+        JOptionPane.showMessageDialog(this,"Successfully Saved!");
+        
+        fieldHomeStreet.setText("");
+        fieldHomeUnit.setText("");
+        fieldHomeCity.setText("");
+        fieldHomeZip.setText("");
+        fieldHomeCountry.setText("");
     }//GEN-LAST:event_btnAddressSaveActionPerformed
 
 

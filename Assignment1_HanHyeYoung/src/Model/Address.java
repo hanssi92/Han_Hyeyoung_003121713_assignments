@@ -8,50 +8,96 @@ package Model;
  *
  * @author Hyungs
  */
-class Address {
-    String streetName;
-    String unitNum;
-    String city;
-    String country;
-    String zipCode;
+public class Address {
+    String homeStreetName;
+    String homeUnitNum;
+    String homeCity;
+    String homeCountry;
+    String homeZipCode;
+    
+    String localStreetName;
+    String localUnitNum;
+    String localCity;
+    String localZipCode;
+    String localCountry;
 
-    public String getStreetName() {
-        return streetName;
+    public String getHomeStreetName() {
+        return homeStreetName;
     }
 
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
+    public void setHomeStreetName(String homeStreetName) {
+        this.homeStreetName = homeStreetName;
     }
 
-    public String getUnitNum() {
-        return unitNum;
+    public String getHomeUnitNum() {
+        return homeUnitNum;
     }
 
-    public void setUnitNum(String unitNum) {
-        this.unitNum = unitNum;
+    public void setHomeUnitNum(String homeUnitNum) {
+        this.homeUnitNum = homeUnitNum;
     }
 
-    public String getCity() {
-        return city;
+    public String getHomeCity() {
+        return homeCity;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setHomeCity(String homeCity) {
+        this.homeCity = homeCity;
     }
 
-    public String getCountry() {
-        return country;
+    public String getHomeCountry() {
+        return homeCountry;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setHomeCountry(String homeCountry) {
+        this.homeCountry = homeCountry;
     }
 
-    public String getZipCode() {
-        return zipCode;
+    public String getHomeZipCode() {
+        return homeZipCode;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setHomeZipCode(String homeZipCode) {
+        this.homeZipCode = homeZipCode;
+    }
+
+    public String getLocalStreetName() {
+        return localStreetName;
+    }
+
+    public void setLocalStreetName(String localStreetName) {
+        this.localStreetName = localStreetName;
+    }
+
+    public String getLocalUnitNum() {
+        return localUnitNum;
+    }
+
+    public void setLocalUnitNum(String localUnitNum) {
+        this.localUnitNum = localUnitNum;
+    }
+
+    public String getLocalCity() {
+        return localCity;
+    }
+
+    public void setLocalCity(String localCity) {
+        this.localCity = localCity;
+    }
+
+    public String getLocalZipCode() {
+        return localZipCode;
+    }
+
+    public void setLocalZipCode(String localZipCode) {
+        this.localZipCode = localZipCode;
+    }
+
+    public String getLocalCountry() {
+        return localCountry;
+    }
+
+    public void setLocalCountry(String localCountry) {
+        this.localCountry = localCountry;
     }
 }

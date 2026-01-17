@@ -5,6 +5,7 @@
 package UI;
 
 import Model.Person;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,7 +40,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         fieldLastName = new javax.swing.JTextField();
         spnAge = new javax.swing.JSpinner();
         chkYes = new javax.swing.JCheckBox();
-        chkNo = new javax.swing.JCheckBox();
         btnPersonSave = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 204));
@@ -62,8 +62,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         });
 
         chkYes.setText("Yes");
-
-        chkNo.setText("No");
+        chkYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkYesActionPerformed(evt);
+            }
+        });
 
         btnPersonSave.setText("Save");
         btnPersonSave.addActionListener(new java.awt.event.ActionListener() {
@@ -83,24 +86,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(lblMaritalStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(spnAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(chkYes)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(chkNo)))
-                        .addGap(33, 33, 33))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(fieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(62, Short.MAX_VALUE))))
+                    .addComponent(fieldLastName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldFirstName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkYes, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(spnAge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(lblPersonInformation)
@@ -125,15 +117,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(fieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAge)
-                    .addComponent(spnAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMaritalStatus)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkYes)
-                        .addComponent(chkNo)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                    .addComponent(spnAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkYes)
+                    .addComponent(lblMaritalStatus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
                 .addComponent(btnPersonSave)
                 .addGap(17, 17, 17))
         );
@@ -145,12 +135,36 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnPersonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonSaveActionPerformed
         // TODO add your handling code here:
+        //Step1: Collect text from the field
+        String firstName = fieldFirstName.getText();
+        String lastName = fieldLastName.getText();
+        int age = (int) spnAge.getValue();
+        boolean maritalStatus = chkYes.isSelected();
+        
+        //Step 2: put those infomration to product
+        product.setFirstName(firstName);
+        product.setLastName(lastName);
+        product.setAge (age);
+        product.setMaritalStatus(maritalStatus);
+        
+        //Step 3: set a little pop up 
+        JOptionPane.showMessageDialog(this,"Successfully Saved!");
+        
+        //Step 4: clear all text field
+        fieldFirstName.setText("");
+        fieldLastName.setText("");
+        spnAge.setValue(0);
+        chkYes.setSelected(false);
+       
     }//GEN-LAST:event_btnPersonSaveActionPerformed
+
+    private void chkYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkYesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkYesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPersonSave;
-    private javax.swing.JCheckBox chkNo;
     private javax.swing.JCheckBox chkYes;
     private javax.swing.JTextField fieldFirstName;
     private javax.swing.JTextField fieldLastName;

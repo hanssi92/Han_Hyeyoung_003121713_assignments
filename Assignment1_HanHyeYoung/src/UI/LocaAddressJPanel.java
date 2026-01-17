@@ -5,6 +5,7 @@
 package UI;
 
 import Model.Person;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -136,6 +137,27 @@ public class LocaAddressJPanel extends javax.swing.JPanel {
 
     private void btnLocalSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalSaveActionPerformed
         // TODO add your handling code here:
+        String streetName = fieldLocalStreet.getText();
+        String unitNumber = fieldLocalUnit.getText();
+        String city = fieldLocalCity.getText();
+        String zipCode = fieldLocalZip.getText();
+        String country = fieldLocalCountry.getText();
+        
+        product.getLocalAddress().setLocalStreetName(streetName);
+        product.getLocalAddress().setLocalUnitNum(unitNumber);
+        product.getLocalAddress().setLocalCity(city);
+        product.getLocalAddress().setLocalZipCode(zipCode);
+        product.getLocalAddress().setLocalCountry(country);
+        
+        JOptionPane.showMessageDialog(this,"Successfully Saved!");
+        
+        fieldLocalStreet.setText("");
+        fieldLocalUnit.setText("");
+        fieldLocalCity.setText("");
+        fieldLocalZip.setText("");
+        fieldLocalCountry.setText("");
+        
+        
     }//GEN-LAST:event_btnLocalSaveActionPerformed
 
     private void fieldLocalStreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldLocalStreetActionPerformed

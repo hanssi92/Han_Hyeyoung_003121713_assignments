@@ -5,6 +5,7 @@
 package UI;
 
 import Model.Person;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -60,6 +61,11 @@ public class BankJPanel extends javax.swing.JPanel {
         lblBalance.setText("Balance");
 
         btnBankSave.setText("Save");
+        btnBankSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBankSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,7 +107,7 @@ public class BankJPanel extends javax.swing.JPanel {
                     .addComponent(lblAcctHldrName)
                     .addComponent(fieldAcctHldrName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblBankName)
                     .addComponent(fieldBankName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -121,6 +127,38 @@ public class BankJPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBankSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBankSaveActionPerformed
+        // TODO add your handling code here:
+        String accountHolderName = fieldAcctHldrName.getText();
+        String bankName = fieldBankName.getText();
+        String accountNumber = fieldAcctNum.getText();
+        String accountType = fieldAcctType.getText();
+        
+        double balance;
+        try {
+            balance = Double.parseDouble(fieldBalance.getText());
+        } catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, "Please enter a Valid Balance");
+                    return;
+        }
+        
+//double balance = Double.parseDouble(fieldBalance.getText());
+        
+        product.getBankAccount().setAccountHolderName(accountHolderName);
+        product.getBankAccount().setBankName(bankName);
+        product.getBankAccount().setAccountNumber(accountNumber);
+        product.getBankAccount().setAccountType(accountType);
+        product.getBankAccount().setBalance(balance);
+        
+        JOptionPane.showMessageDialog(this,"Successfully Saved!");
+        
+        fieldAcctHldrName.setText("");
+        fieldBankName.setText("");
+        fieldAcctNum.setText("");
+        fieldAcctType.setText("");
+        fieldBalance.setText("");
+    }//GEN-LAST:event_btnBankSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

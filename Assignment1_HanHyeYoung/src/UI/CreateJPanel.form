@@ -29,31 +29,14 @@
                   <Component id="lblLastName" alignment="0" max="32767" attributes="0"/>
                   <Component id="lblFirstName" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace pref="61" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="spnAge" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="chkYes" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="chkNo" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="61" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="fieldLastName" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                          <Component id="fieldFirstName" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="62" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="fieldLastName" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                  <Component id="fieldFirstName" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                  <Component id="chkYes" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="spnAge" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
@@ -84,18 +67,15 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAge" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="spnAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAge" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblMaritalStatus" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="chkYes" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkNo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkYes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMaritalStatus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="200" max="32767" attributes="0"/>
+              <EmptySpace pref="186" max="32767" attributes="0"/>
               <Component id="btnPersonSave" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
@@ -144,11 +124,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Yes"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="chkNo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="No"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkYesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPersonSave">
       <Properties>

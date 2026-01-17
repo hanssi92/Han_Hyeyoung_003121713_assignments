@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblViewLocalUnit" max="32767" attributes="0"/>
+                  <Component id="lblViewLocalStreet" max="32767" attributes="0"/>
+                  <Component id="lblViewLocalCity" max="32767" attributes="0"/>
+                  <Component id="lblViewLocalZip" alignment="0" max="32767" attributes="0"/>
+                  <Component id="lblViewLocalCountry" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="fieldViewLocalStreet" max="32767" attributes="0"/>
+                  <Component id="fieldViewLocalUnit" max="32767" attributes="0"/>
+                  <Component id="fieldViewLocalCity" max="32767" attributes="0"/>
+                  <Component id="fieldViewLocalZip" max="32767" attributes="0"/>
+                  <Component id="fieldViewLocalCountry" pref="240" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="100" max="32767" attributes="0"/>
+              <Component id="lblViewLocalTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Component id="lblViewLocalTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewLocalStreet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldViewLocalStreet" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewLocalUnit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldViewLocalUnit" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewLocalCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldViewLocalCity" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewLocalZip" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldViewLocalZip" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewLocalCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldViewLocalCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="234" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblViewLocalTitle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="19" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Local Address Information"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewLocalStreet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Street Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewLocalUnit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Unit Number"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewLocalCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewLocalZip">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Zip Code"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewLocalCountry">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Country"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fieldViewLocalStreet">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fieldViewLocalUnit">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fieldViewLocalCity">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldViewLocalCityActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fieldViewLocalZip">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fieldViewLocalCountry">
+    </Component>
+  </SubComponents>
+</Form>

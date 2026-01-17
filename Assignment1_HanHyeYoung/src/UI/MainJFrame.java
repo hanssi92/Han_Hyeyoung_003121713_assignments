@@ -73,6 +73,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnViewHomeAddress.setText("View Home Address");
+        btnViewHomeAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewHomeAddressActionPerformed(evt);
+            }
+        });
 
         btnCreateLocalAddress.setText("Create Local Address");
         btnCreateLocalAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +87,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnViewLocalAddress.setText("View Local Address");
+        btnViewLocalAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewLocalAddressActionPerformed(evt);
+            }
+        });
 
         btnCreateBankAccount.setText("Create Bank Account");
         btnCreateBankAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +101,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnViewBankAccount.setText("View Bank Account");
+        btnViewBankAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewBankAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -115,10 +130,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnCreatePerson, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                    .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnCreateHomeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewHomeAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                        .addComponent(btnViewPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnCreateHomeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnViewHomeAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                    .addComponent(btnViewPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
         menuPanelLayout.setVerticalGroup(
@@ -175,6 +189,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
         // TODO add your handling code here:
+        ViewPersonJPanel viewPersonJPanel = new ViewPersonJPanel (product);
+        splitPane.setRightComponent(viewPersonJPanel);
     }//GEN-LAST:event_btnViewPersonActionPerformed
 
     private void btnCreateHomeAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHomeAddressActionPerformed
@@ -194,6 +210,24 @@ public class MainJFrame extends javax.swing.JFrame {
         LocaAddressJPanel localAddressJPanel = new LocaAddressJPanel(product);
         splitPane.setRightComponent(localAddressJPanel);
     }//GEN-LAST:event_btnCreateLocalAddressActionPerformed
+
+    private void btnViewHomeAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHomeAddressActionPerformed
+        // TODO add your handling code here:
+        ViewHomeJPanel viewHomeJPanel = new ViewHomeJPanel (product);
+        splitPane.setRightComponent(viewHomeJPanel);
+    }//GEN-LAST:event_btnViewHomeAddressActionPerformed
+
+    private void btnViewLocalAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewLocalAddressActionPerformed
+        // TODO add your handling code here:
+        ViewLocalJPanel viewLocalJPanel = new ViewLocalJPanel (product);
+        splitPane.setRightComponent(viewLocalJPanel);
+    }//GEN-LAST:event_btnViewLocalAddressActionPerformed
+
+    private void btnViewBankAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBankAccountActionPerformed
+        // TODO add your handling code here:
+        ViewBankJPanel viewBankJPanel = new ViewBankJPanel (product);
+        splitPane.setRightComponent(viewBankJPanel);
+    }//GEN-LAST:event_btnViewBankAccountActionPerformed
 
     /**
      * @param args the command line arguments
