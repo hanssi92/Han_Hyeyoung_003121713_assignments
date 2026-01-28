@@ -4,10 +4,45 @@
  */
 package Business;
 
+import java.util.ArrayList;
+import model.Vehicle;
+
 /**
  *
  * @author Hyungs
  */
 public class VehicleDirectory {
     
+    private ArrayList<Vehicle> vehicles;
+    
+    public VehicleDirectory() {
+        this.vehicles = new ArrayList<Vehicle>();
+    }
+    
+    public ArrayList<Vehicle> getVehicles () {
+        return vehicles;
+    }
+    
+    public void setVehicles(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+    
+    public Vehicle addVehicle() {
+        Vehicle v = new Vehicle();
+        vehicles.add(v);
+        return v;
+    }
+    
+    public void deleteVehicle(Vehicle vehicle) {
+        vehicles.remove(vehicle);
+    }
+    
+    public Vehicle searchByVehicleId(String id) {
+        for (Vehicle v : vehicles) {
+            if (v.getVehicleID() != null && v.getVehicleID().equalsIgnoreCase(id)) {
+                return v;
+            }
+        }
+        return null;
+    }
 }
