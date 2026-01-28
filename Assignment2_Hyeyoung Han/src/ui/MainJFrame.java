@@ -6,6 +6,9 @@ package ui;
 
 import Business.ServiceCatalog;
 import Business.VehicleDirectory;
+import model.Service;
+import model.Vehicle;
+
 
 
 /**
@@ -169,6 +172,39 @@ public class MainJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void generateDemoData() {
+        Vehicle newVehicle = vehicleDirectory.addVehicle();
+        Service newService = serviceCatalog.addService();
+        newVehicle.setOwnerID("O-11112222");
+        newVehicle.setVehicleID("HD-202501");
+        newService.setServiceType("Change Oil");
+        newService.setCost(100);
         
+        Vehicle another2NewVehicle = vehicleDirectory.addVehicle();
+        Service another2NewService = serviceCatalog.addService();
+        another2NewVehicle.setOwnerID("O-44445555");
+        another2NewVehicle.setVehicleID("TO-202401");
+        another2NewService.setServiceType("Car Wash-Auto");
+        another2NewService.setCost(40);
+        
+        Vehicle another3NewVehicle = vehicleDirectory.addVehicle();
+        Service another3NewService = serviceCatalog.addService();
+        another3NewVehicle.setOwnerID("O-77778888");
+        another3NewVehicle.setVehicleID("HO-202102");
+        another3NewService.setServiceType("Maintenance");
+        another3NewService.setCost(60);
+        
+        Vehicle another4NewVehicle = vehicleDirectory.addVehicle();
+        Service another4NewService = serviceCatalog.addService();
+        another4NewVehicle.setOwnerID("O-66665555");
+        another4NewVehicle.setVehicleID("TS-202310");
+        another4NewService.setServiceType("Car Wash");
+        another4NewService.setCost(40);
+        
+        Vehicle another5NewVehicle = vehicleDirectory.addVehicle();
+        Service another5NewService = serviceCatalog.addService();
+        another5NewVehicle.setOwnerID("O-33334444");
+        another5NewVehicle.setVehicleID("BM-202104");
+        another5NewService.setServiceType("Change Oil");
+        another5NewService.setCost(100);
     }
 }

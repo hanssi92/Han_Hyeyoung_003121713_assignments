@@ -54,6 +54,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         });
 
         jTable1.setBackground(new java.awt.Color(153, 153, 255));
+        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -62,7 +63,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Owner ID", "Vehicle ID", "Service Opted", "Cost"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
