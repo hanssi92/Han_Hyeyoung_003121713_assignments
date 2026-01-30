@@ -4,17 +4,26 @@
  */
 package ui.VehicleService;
 
+import Business.VehicleDirectory;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class VehicleOwnerJPanel extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    VehicleDirectory vehicleDirectory;
     /**
      * Creates new form VehicleOwnerJPanel
      */
-    public VehicleOwnerJPanel() {
+    public VehicleOwnerJPanel(JPanel container, VehicleDirectory directory) {
         initComponents();
+        
+        userProcessContainer = container;
+        vehicleDirectory = directory;
     }
 
     /**
@@ -55,6 +64,11 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
         btnBack.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnBack.setText("<<<  Back");
         btnBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         lblTitle.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         lblTitle.setText("Owner Details");
@@ -208,9 +222,9 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
                     .addComponent(lblOwnerId)
                     .addComponent(txtOwnerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOwnerFirstName)
-                    .addComponent(txtOwnerFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtOwnerFirstName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOwnerFirstName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOwnerLastName)
@@ -230,6 +244,14 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
     private void btnRegServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegServiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegServiceActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -138,7 +138,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
         // TODO add your handling code here:
-        ServicesJPanel panel = new ServicesJPanel();
+        ServicesJPanel panel = new ServicesJPanel(userProcessContainer, serviceCatalog);
         userProcessContainer.add("ServicesJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -148,7 +148,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnVehicleOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehicleOwnerActionPerformed
         // TODO add your handling code here:
-        VehicleOwnerJPanel panel = new VehicleOwnerJPanel();
+        VehicleOwnerJPanel panel = new VehicleOwnerJPanel(userProcessContainer, vehicleDirectory);
         userProcessContainer.add("VehicleOwnerJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -157,7 +157,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnManageVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVehiclesActionPerformed
         // TODO add your handling code here:
-        ManageVehiclesJPanel panel = new ManageVehiclesJPanel();
+        ManageVehiclesJPanel panel = new ManageVehiclesJPanel(userProcessContainer, vehicleDirectory, serviceCatalog);
         userProcessContainer.add("ManageVehiclesJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

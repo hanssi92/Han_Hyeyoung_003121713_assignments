@@ -4,17 +4,31 @@
  */
 package ui.VehicleService;
 
+import Business.ServiceCatalog;
+import Business.VehicleDirectory;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class ManageVehiclesJPanel extends javax.swing.JPanel {
+    
+    JPanel userProcessContainer;
+    VehicleDirectory vehicleDirectory;
+    ServiceCatalog serviceCatalog;
 
     /**
      * Creates new form ManageVehiclesJPanel
      */
-    public ManageVehiclesJPanel() {
+    public ManageVehiclesJPanel(JPanel container, VehicleDirectory directory, ServiceCatalog catalog) {
         initComponents();
+        
+        userProcessContainer = container;
+        vehicleDirectory = directory;
+        serviceCatalog = catalog;
+        
     }
 
     /**
@@ -134,6 +148,10 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed

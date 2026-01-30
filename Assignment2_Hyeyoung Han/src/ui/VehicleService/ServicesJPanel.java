@@ -4,17 +4,27 @@
  */
 package ui.VehicleService;
 
+import Business.ServiceCatalog;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class ServicesJPanel extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    ServiceCatalog serviceCatalog;
+    
     /**
      * Creates new form ServicesJPanel
      */
-    public ServicesJPanel() {
+    public ServicesJPanel(JPanel container, ServiceCatalog catalog) {
         initComponents();
+        
+        userProcessContainer = container;
+        serviceCatalog = catalog;
     }
 
     /**
@@ -164,6 +174,9 @@ public class ServicesJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 
