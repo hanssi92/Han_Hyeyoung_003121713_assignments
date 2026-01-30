@@ -6,8 +6,12 @@ package ui;
 
 import Business.ServiceCatalog;
 import Business.VehicleDirectory;
+import java.awt.CardLayout;
 import model.Service;
 import model.Vehicle;
+import ui.VehicleService.ManageVehiclesJPanel;
+import ui.VehicleService.ServicesJPanel;
+import ui.VehicleService.VehicleOwnerJPanel;
 
 
 
@@ -46,7 +50,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnServices = new javax.swing.JButton();
         btnVehicleOwner = new javax.swing.JButton();
         btnManageVehicles = new javax.swing.JButton();
-        WorkAreaJPanel = new javax.swing.JPanel();
+        userProcessContainer = new javax.swing.JPanel();
         lblWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,31 +112,57 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setTopComponent(topJPanel);
 
-        WorkAreaJPanel.setBackground(new java.awt.Color(153, 153, 255));
-        WorkAreaJPanel.setLayout(new java.awt.CardLayout());
+        userProcessContainer.setBackground(new java.awt.Color(153, 153, 255));
+        userProcessContainer.setLayout(new java.awt.CardLayout());
 
         lblWelcome.setFont(new java.awt.Font("Californian FB", 1, 48)); // NOI18N
         lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcome.setText("Welcome to  Vehicle Service Management Application");
-        WorkAreaJPanel.add(lblWelcome, "card2");
+        userProcessContainer.add(lblWelcome, "card2");
 
-        jSplitPane1.setRightComponent(WorkAreaJPanel);
+        jSplitPane1.setRightComponent(userProcessContainer);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
         // TODO add your handling code here:
+        ServicesJPanel panel = new ServicesJPanel();
+        userProcessContainer.add("ServicesJPanel", panel);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnServicesActionPerformed
 
     private void btnVehicleOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehicleOwnerActionPerformed
         // TODO add your handling code here:
+        VehicleOwnerJPanel panel = new VehicleOwnerJPanel();
+        userProcessContainer.add("VehicleOwnerJPanel", panel);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnVehicleOwnerActionPerformed
 
     private void btnManageVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVehiclesActionPerformed
         // TODO add your handling code here:
+        ManageVehiclesJPanel panel = new ManageVehiclesJPanel();
+        userProcessContainer.add("ManageVehiclesJPanel", panel);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnManageVehiclesActionPerformed
 
     /**
@@ -171,13 +201,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel WorkAreaJPanel;
     private javax.swing.JButton btnManageVehicles;
     private javax.swing.JButton btnServices;
     private javax.swing.JButton btnVehicleOwner;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblWelcome;
     private javax.swing.JPanel topJPanel;
+    private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
 
     private void generateDemoData() {
