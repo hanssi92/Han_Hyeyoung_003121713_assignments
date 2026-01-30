@@ -15,6 +15,8 @@ public class Service {
     private double cost;
     private String mechanicName;
     private int serviceDuration;
+    private String ownerId;
+    private String vehicleId;
 
     public String getServiceId() {
         return serviceId;
@@ -55,4 +57,21 @@ public class Service {
     public void setServiceDuration(int serviceDuration) {
         this.serviceDuration = serviceDuration;
     }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(String vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+    
 }

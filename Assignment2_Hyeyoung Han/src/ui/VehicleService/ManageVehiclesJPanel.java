@@ -8,6 +8,9 @@ import Business.ServiceCatalog;
 import Business.VehicleDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Service;
+import model.Vehicle;
 
 /**
  *
@@ -29,6 +32,8 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         vehicleDirectory = directory;
         serviceCatalog = catalog;
         
+        populateTable();
+        
     }
 
     /**
@@ -45,7 +50,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblManageVehicles = new javax.swing.JTable();
         btnViewDetails = new javax.swing.JButton();
         btnDeleteAccount = new javax.swing.JButton();
 
@@ -67,9 +72,9 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(153, 153, 255));
-        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblManageVehicles.setBackground(new java.awt.Color(153, 153, 255));
+        tblManageVehicles.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblManageVehicles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -80,7 +85,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
                 "Owner ID", "Vehicle ID", "Service Opted", "Cost"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblManageVehicles);
 
         btnViewDetails.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnViewDetails.setText("View Details");
@@ -165,8 +170,25 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnViewDetails;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblManageVehicles;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        
+        DefaultTableModel model = (DefaultTableModel) tblManageVehicles.getModel();
+        model.setRowCount(0);
+        
+        for (Service s : serviceCatalog.getService()) {
+            
+            Object[] row = new Object[4];
+            row[0] = s.getOwnerId();
+            row[1] = s.getVehicleId();
+            row[2] = s.getServiceType();
+            row[3] = s.getCost();
+            
+            model.addRow(row);
+        }
+    }
 }

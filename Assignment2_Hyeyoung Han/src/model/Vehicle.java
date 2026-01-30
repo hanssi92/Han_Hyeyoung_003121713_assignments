@@ -10,24 +10,14 @@ package model;
  */
 public class Vehicle {
     
-    private String vehicleID;
     private String make;
     private String model;
     private int year;
     private String registrationNumber;
     
-    private String ownerID;
     private String ownerFirstName;
     private String ownerLastName;
     private String serviceDate;
-
-    public String getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(String vehicleID) {
-        this.vehicleID = vehicleID;
-    }
 
     public String getMake() {
         return make;
@@ -59,14 +49,6 @@ public class Vehicle {
 
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
-    }
-
-    public String getOwnerID() {
-        return ownerID;
-    }
-
-    public void setOwnerID(String ownerID) {
-        this.ownerID = ownerID;
     }
 
     public String getOwnerFirstName() {

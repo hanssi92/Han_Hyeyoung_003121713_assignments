@@ -6,7 +6,9 @@ package ui.VehicleService;
 
 import Business.ServiceCatalog;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import model.Service;
 
 /**
  *
@@ -170,6 +172,59 @@ public class ServicesJPanel extends javax.swing.JPanel {
 
     private void btnCreateServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateServiceActionPerformed
         // TODO add your handling code here:
+        double cost;
+        int serviceDuration;
+        
+        String serviceId = txtServiceId.getText();
+        String serviceType = txtServiceType.getText();
+        String mechanicName = txtMechanicName.getText();
+        
+        if (serviceId.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please input Service ID.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        if (serviceType.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please input Service Type.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        if (mechanicName.isEmpty()){
+             JOptionPane.showMessageDialog(this, "Please input Mechanic Name.", "Warning", JOptionPane.WARNING_MESSAGE);
+             return;
+        }
+        
+        try {
+            cost = Double.parseDouble(txtCost.getText());
+            serviceDuration = Integer.parseInt(txtServiceDuration.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Please enter valid cost and duration.", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        Service s = serviceCatalog.addService();
+        
+        s.setServiceId(serviceId);
+        s.setServiceType(serviceType);
+        s.setCost(cost);
+        s.setMechanicName(mechanicName);
+        s.setServiceDuration(serviceDuration);
+        
+        JOptionPane.showMessageDialog(this, "Service sucessfully created.", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
+        txtServiceId.setText("");
+        txtServiceType.setText("");
+        txtCost.setText("");
+        txtMechanicName.setText("");
+        txtServiceDuration.setText("");
+    // private String serviceId;
+    //private String serviceType;
+    //private double cost;
+    //private String mechanicName;
+    //private int serviceDuration;
+            
+        
+        
     }//GEN-LAST:event_btnCreateServiceActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

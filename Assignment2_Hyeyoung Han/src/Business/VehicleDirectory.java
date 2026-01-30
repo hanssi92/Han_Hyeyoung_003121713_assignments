@@ -36,13 +36,4 @@ public class VehicleDirectory {
     public void deleteVehicle(Vehicle vehicle) {
         vehicles.remove(vehicle);
     }
-    
-    public Vehicle searchByVehicleId(String id) {
-        for (Vehicle v : vehicles) {
-            if (v.getVehicleID() != null && v.getVehicleID().equalsIgnoreCase(id)) {
-                return v;
-            }
-        }
-        return null;
-    }
 }
