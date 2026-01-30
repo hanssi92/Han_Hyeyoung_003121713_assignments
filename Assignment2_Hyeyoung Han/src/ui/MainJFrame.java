@@ -76,6 +76,11 @@ public class MainJFrame extends javax.swing.JFrame {
         btnManageVehicles.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         btnManageVehicles.setText("Manage Vehicles");
         btnManageVehicles.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnManageVehicles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageVehiclesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout topJPanelLayout = new javax.swing.GroupLayout(topJPanel);
         topJPanel.setLayout(topJPanelLayout);
@@ -125,6 +130,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnVehicleOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehicleOwnerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVehicleOwnerActionPerformed
+
+    private void btnManageVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVehiclesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageVehiclesActionPerformed
 
     /**
      * @param args the command line arguments
