@@ -10,14 +10,21 @@ package model;
  */
 public class Vehicle {
     
+    private String vehicleId;
     private String make;
     private String model;
     private int year;
     private String registrationNumber;
     
-    private String ownerFirstName;
-    private String ownerLastName;
-    private String serviceDate;
+    private String ownerId;
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(String vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
     public String getMake() {
         return make;
@@ -51,6 +58,14 @@ public class Vehicle {
         this.registrationNumber = registrationNumber;
     }
 
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
     public String getOwnerFirstName() {
         return ownerFirstName;
     }
@@ -74,5 +89,9 @@ public class Vehicle {
     public void setServiceDate(String serviceDate) {
         this.serviceDate = serviceDate;
     }
+    private String ownerFirstName;
+    private String ownerLastName;
+    private String serviceDate;
+    
 
 }

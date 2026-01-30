@@ -7,10 +7,10 @@ package ui.VehicleService;
 import Business.ServiceCatalog;
 import Business.VehicleDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.Service;
-import model.Vehicle;
 
 /**
  *
@@ -33,7 +33,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         serviceCatalog = catalog;
         
         populateTable();
-        
+
     }
 
     /**
@@ -99,6 +99,11 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         btnDeleteAccount.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnDeleteAccount.setText("Delete Account");
         btnDeleteAccount.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDeleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -163,6 +168,25 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
+    private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblManageVehicles.getSelectedRow();
+        
+        if (selectedRow >= 0) {
+            
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the selected item?.", "Warning",dialogButton);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                Service selectedService = (Service)tblManageVehicles.getValueAt(selectedRow, 0);
+                serviceCatalog.deleteService(selectedService);
+                populateTable();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please selected an account from the list.", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnDeleteAccountActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
@@ -186,7 +210,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
             row[0] = s.getOwnerId();
             row[1] = s.getVehicleId();
             row[2] = s.getServiceType();
-            row[3] = s.getCost();
+            row[3] = String.valueOf(s.getCost());
             
             model.addRow(row);
         }
