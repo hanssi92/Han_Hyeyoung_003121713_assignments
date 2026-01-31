@@ -24,19 +24,17 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnViewBack" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="260" max="32767" attributes="0"/>
               <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="357" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
-                      <Component id="btnViewUpdate1" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
+                      <Component id="btnViewUpdate" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="btnViewSave" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnViewDelete" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
@@ -78,7 +76,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="173" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,9 +140,8 @@
               </Group>
               <EmptySpace pref="83" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnViewDelete" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnViewSave" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="btnViewUpdate1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnViewUpdate" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
@@ -200,22 +197,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtViewServiceDate">
     </Component>
-    <Component class="javax.swing.JButton" name="btnViewDelete">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Delete"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder/>
-          </Border>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDeleteActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnViewSave">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -228,6 +209,9 @@
           </Border>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewSaveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblViewVehicleId">
       <Properties>
@@ -295,7 +279,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewBackActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnViewUpdate1">
+    <Component class="javax.swing.JButton" name="btnViewUpdate">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="14" style="1"/>
@@ -308,7 +292,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewUpdate1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewUpdateActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

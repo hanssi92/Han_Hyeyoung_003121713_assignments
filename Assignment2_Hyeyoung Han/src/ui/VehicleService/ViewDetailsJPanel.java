@@ -4,17 +4,42 @@
  */
 package ui.VehicleService;
 
+import Business.ServiceCatalog;
+import Business.VehicleDirectory;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import model.Vehicle;
+
 /**
  *
  * @author Hyungs
  */
 public class ViewDetailsJPanel extends javax.swing.JPanel {
+    
+    JPanel userProcessContainer;
+    VehicleDirectory vehicleDirectory;
+    ServiceCatalog serviceCatalog;
+    
+    private Vehicle vehicle;
+
 
     /**
      * Creates new form ViewDetailsJPanel
      */
-    public ViewDetailsJPanel() {
+    public ViewDetailsJPanel(JPanel container, VehicleDirectory directory, ServiceCatalog catalog, Vehicle vehicle) {
         initComponents();
+        
+        this.userProcessContainer = container;
+        this.vehicleDirectory = directory;
+        this.serviceCatalog = catalog;
+        
+        this.vehicle = vehicle;
+        
+        populateFields();
+        setViewMode();
+
+        
     }
 
     /**
@@ -35,7 +60,6 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
         txtViewOwnerFirstName = new javax.swing.JTextField();
         txtViewOwnerLastName = new javax.swing.JTextField();
         txtViewServiceDate = new javax.swing.JTextField();
-        btnViewDelete = new javax.swing.JButton();
         btnViewSave = new javax.swing.JButton();
         lblViewVehicleId = new javax.swing.JLabel();
         lblViewMake = new javax.swing.JLabel();
@@ -48,7 +72,7 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
         lblViewRegistrationNum = new javax.swing.JLabel();
         txtViewRegistrationNum = new javax.swing.JTextField();
         btnViewBack = new javax.swing.JButton();
-        btnViewUpdate1 = new javax.swing.JButton();
+        btnViewUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -67,18 +91,14 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
         lblViewServiceDate.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         lblViewServiceDate.setText("Service Date:");
 
-        btnViewDelete.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        btnViewDelete.setText("Delete");
-        btnViewDelete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnViewDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewDeleteActionPerformed(evt);
-            }
-        });
-
         btnViewSave.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnViewSave.setText("Save");
         btnViewSave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnViewSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewSaveActionPerformed(evt);
+            }
+        });
 
         lblViewVehicleId.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         lblViewVehicleId.setText("Vehicle ID :");
@@ -104,12 +124,12 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewUpdate1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        btnViewUpdate1.setText("Update");
-        btnViewUpdate1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnViewUpdate1.addActionListener(new java.awt.event.ActionListener() {
+        btnViewUpdate.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        btnViewUpdate.setText("Update");
+        btnViewUpdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnViewUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewUpdate1ActionPerformed(evt);
+                btnViewUpdateActionPerformed(evt);
             }
         });
 
@@ -120,18 +140,16 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnViewBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                 .addComponent(lblTitle)
                 .addGap(357, 357, 357))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(btnViewUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(328, 328, 328)
+                        .addComponent(btnViewUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(287, 287, 287)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +180,7 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
                                     .addComponent(txtViewModel, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(txtViewYear, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(txtViewRegistrationNum))))))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,31 +230,74 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
                     .addComponent(txtViewRegistrationNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnViewUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnViewDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDeleteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewDeleteActionPerformed
-
     private void btnViewBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnViewBackActionPerformed
 
-    private void btnViewUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewUpdate1ActionPerformed
+    private void btnViewUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewUpdateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewUpdate1ActionPerformed
+        
+        setEditMode();
+        
+        
+    }//GEN-LAST:event_btnViewUpdateActionPerformed
+
+    private void btnViewSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSaveActionPerformed
+        // TODO add your handling code here:
+        
+        String ownerFirstName = txtViewOwnerFirstName.getText();
+        String ownerLastName = txtViewOwnerLastName.getText();
+        String serviceDate = txtViewServiceDate.getText();
+        
+        String make = txtViewMake.getText();
+        String model = txtViewModel.getText();
+        String yearText = txtViewYear.getText();
+        String registrationNumber = txtViewRegistrationNum.getText();
+        
+        if (ownerFirstName.isBlank() || ownerLastName.isBlank() || serviceDate.isBlank()|| make.isBlank() || model.isBlank() || yearText.isBlank() ||
+                registrationNumber.isBlank()) {
+            
+            JOptionPane.showMessageDialog(this, "All fields are mandatory.", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        int year;
+        
+        try {
+        year = Integer.parseInt(txtViewYear.getText());
+        } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Year must be a number.");
+        return;
+        }
+
+        vehicle.setOwnerFirstName(ownerFirstName);
+        vehicle.setOwnerLastName(ownerLastName);
+        vehicle.setServiceDate(serviceDate);
+
+        vehicle.setMake(make);
+        vehicle.setModel(model);
+        vehicle.setYear(year);
+        vehicle.setRegistrationNumber(registrationNumber);
+
+        JOptionPane.showMessageDialog(this, "Information successfully updated.");
+        
+        setViewMode();
+
+    }//GEN-LAST:event_btnViewSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewBack;
-    private javax.swing.JButton btnViewDelete;
     private javax.swing.JButton btnViewSave;
-    private javax.swing.JButton btnViewUpdate1;
+    private javax.swing.JButton btnViewUpdate;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblViewMake;
     private javax.swing.JLabel lblViewModel;
@@ -257,4 +318,54 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtViewVehicleId;
     private javax.swing.JTextField txtViewYear;
     // End of variables declaration//GEN-END:variables
+
+    private void populateFields() {
+        
+    txtViewOwnerId.setText(vehicle.getOwnerId());
+    txtViewOwnerFirstName.setText(vehicle.getOwnerFirstName());
+    txtViewOwnerLastName.setText(vehicle.getOwnerLastName());
+    txtViewServiceDate.setText(vehicle.getServiceDate());
+
+    txtViewVehicleId.setText(vehicle.getVehicleId());
+    txtViewMake.setText(vehicle.getMake());
+    txtViewModel.setText(vehicle.getModel());
+    txtViewYear.setText(String.valueOf(vehicle.getYear()));
+    txtViewRegistrationNum.setText(vehicle.getRegistrationNumber());
+}
+
+    private void setViewMode() {
+    
+    txtViewOwnerId.setEditable(false);
+    txtViewOwnerFirstName.setEditable(false);
+    txtViewOwnerLastName.setEditable(false);
+    txtViewServiceDate.setEditable(false);
+    txtViewVehicleId.setEditable(false);
+    
+    txtViewMake.setEditable(false);
+    txtViewModel.setEditable(false);
+    txtViewYear.setEditable(false);
+    txtViewRegistrationNum.setEditable(false);
+    
+    btnViewSave.setEnabled(true);
+    btnViewUpdate.setEnabled(true);
+    
+    }
+
+    private void setEditMode() {
+    txtViewOwnerId.setEditable(true);
+    txtViewOwnerFirstName.setEditable(true);
+    txtViewOwnerLastName.setEditable(true);
+    txtViewServiceDate.setEditable(true);
+    txtViewVehicleId.setEditable(true);
+    
+    txtViewMake.setEditable(true);
+    txtViewModel.setEditable(true);
+    txtViewYear.setEditable(true);
+    txtViewRegistrationNum.setEditable(true);
+    
+    btnViewSave.setEnabled(true);
+    btnViewUpdate.setEnabled(true);
+    
+    }
+
 }

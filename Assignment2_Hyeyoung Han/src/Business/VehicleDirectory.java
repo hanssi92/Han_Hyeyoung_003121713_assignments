@@ -23,6 +23,7 @@ public class VehicleDirectory {
         return vehicles;
     }
     
+    
     public void setVehicles(ArrayList<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
@@ -36,4 +37,24 @@ public class VehicleDirectory {
     public void deleteVehicle(Vehicle vehicle) {
         vehicles.remove(vehicle);
     }
+    
+        public Vehicle searchByOwnerId(String ownerId) {
+        for (Vehicle v : vehicles) {
+            if (v.getOwnerId().contains(ownerId)) {
+                return v;
+            }
+        }
+        return null;
+    }
+        
+        public ArrayList<Vehicle> searchByOwnerFirstName(String ownerFirstName) {
+            ArrayList<Vehicle> result = new ArrayList<>();
+            
+            for (Vehicle v : vehicles) {
+                if (v.getOwnerFirstName().contains(ownerFirstName)) {
+                    result.add(v);
+                }
+            }
+            return result;
+        }
 }

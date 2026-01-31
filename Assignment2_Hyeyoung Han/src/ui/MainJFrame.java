@@ -138,7 +138,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
         // TODO add your handling code here:
-        ServicesJPanel panel = new ServicesJPanel(userProcessContainer, serviceCatalog);
+        ServicesJPanel panel = new ServicesJPanel(userProcessContainer, vehicleDirectory, serviceCatalog);
         userProcessContainer.add("ServicesJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

@@ -27,7 +27,7 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
         userProcessContainer = container;
         vehicleDirectory = directory;
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -270,6 +270,8 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
         v.setMake(make);
         v.setModel(model);
         v.setRegistrationNumber(registrationNumber);
+        v.setOwnerId(ownerId);
+        v.setVehicleId(txtVehicleId.getText());
         
         JOptionPane.showMessageDialog(this, "Registered Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
         

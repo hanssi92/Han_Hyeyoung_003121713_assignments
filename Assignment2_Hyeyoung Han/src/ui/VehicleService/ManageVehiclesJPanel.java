@@ -172,6 +172,23 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
+        int selectedRow = tblManageVehicles.getSelectedRow();
+        
+        if (selectedRow >0 ) {
+            
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select an account from the list to view", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        Vehicle selectedVehicle = (Vehicle) tblManageVehicles.getValueAt(selectedRow, 0);
+        
+        ViewDetailsJPanel panel = new ViewDetailsJPanel(userProcessContainer, vehicleDirectory, serviceCatalog, selectedVehicle);
+        userProcessContainer.add("ViewDetailsJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
     private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
@@ -195,21 +212,27 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_btnSearchActionPerformed
+        if (!txtSearch.getText().isBlank()) {
+            
+            String ownerId = txtSearch.getText();
+            Vehicle foundVehicle = vehicleDirectory.searchByOwnerId(ownerId);
 
+        
+        if (foundVehicle != null ){
+            
+            ViewDetailsJPanel panel = new ViewDetailsJPanel(userProcessContainer, vehicleDirectory, serviceCatalog, foundVehicle);
+            userProcessContainer.add("ViewDetailsJPanel", panel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        
+        } else {
+            JOptionPane.showMessageDialog(null, "Not Found. Please check and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+           };
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnDeleteAccount;
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnViewDetails;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblManageVehicles;
-    private javax.swing.JTextField txtSearch;
-    // End of variables declaration//GEN-END:variables
+        }else {
+            JOptionPane.showMessageDialog(null, "Please typoe to view", "Warning", JOptionPane.WARNING_MESSAGE);
+           };
+    }
 
     private void populateTable() {
         
@@ -225,6 +248,23 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
             row[3] = v.getCost();
             
             model.addRow(row);
+        
         }
-    }
+        
+
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteAccount;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnViewDetails;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblManageVehicles;
+    private javax.swing.JTextField txtSearch;
+    // End of variables declaration//GEN-END:variables
+
+
 }

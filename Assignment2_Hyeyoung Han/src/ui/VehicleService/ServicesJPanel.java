@@ -5,10 +5,12 @@
 package ui.VehicleService;
 
 import Business.ServiceCatalog;
+import Business.VehicleDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Service;
+import model.Vehicle;
 
 
 /**
@@ -19,15 +21,18 @@ public class ServicesJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
     ServiceCatalog serviceCatalog;
+    VehicleDirectory vehicleDirectory;
+    Vehicle vehicle;
     
     /**
      * Creates new form ServicesJPanel
      */
-    public ServicesJPanel(JPanel container, ServiceCatalog catalog) {
+    public ServicesJPanel(JPanel container, VehicleDirectory directory, ServiceCatalog catalog) {
         initComponents();
         
-        userProcessContainer = container;
-        serviceCatalog = catalog;
+        this.userProcessContainer = container;
+        this.serviceCatalog = catalog;
+        this.vehicleDirectory = directory;
     }
 
     /**
@@ -208,6 +213,13 @@ public class ServicesJPanel extends javax.swing.JPanel {
         s.setCost(cost);
         s.setMechanicName(mechanicName);
         s.setServiceDuration(serviceDuration);
+        
+        Vehicle v = vehicleDirectory.searchByOwnerId(serviceId);
+        if (v != null) {
+            v.setServiceType(serviceType);
+            v.setCost(cost);
+        }
+        
 
         JOptionPane.showMessageDialog(this, "Service sucessfully created.", "Information", JOptionPane.INFORMATION_MESSAGE);
         
@@ -216,14 +228,7 @@ public class ServicesJPanel extends javax.swing.JPanel {
         txtCost.setText("");
         txtMechanicName.setText("");
         txtServiceDuration.setText("");
-    // private String serviceId;
-    //private String serviceType;
-    //private double cost;
-    //private String mechanicName;
-    //private int serviceDuration;
-            
-        
-        
+
     }//GEN-LAST:event_btnCreateServiceActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
