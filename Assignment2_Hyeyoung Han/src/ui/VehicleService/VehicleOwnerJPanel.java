@@ -105,7 +105,7 @@ public class VehicleOwnerJPanel extends javax.swing.JPanel {
         lblRegNumber.setText("Registration Number :");
 
         lblServiceOpted.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        lblServiceOpted.setText("Service Opted :");
+        lblServiceOpted.setText("Service Type :");
 
         cmbServiceOpted.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cmbServiceOpted.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Change oil", "Car wash (Auto)", "Car wash", "Maintenance" }));

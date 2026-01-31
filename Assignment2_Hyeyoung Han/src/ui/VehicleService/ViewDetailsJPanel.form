@@ -22,49 +22,98 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnViewBack" min="-2" pref="100" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="357" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnViewUpdate" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="460" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="357" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="lblViewServiceType" max="32767" attributes="0"/>
-                  <Component id="lblViewCost" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lblViewVehicleId" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lblViewOwnerId" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtViewOwnerId" alignment="0" pref="200" max="32767" attributes="0"/>
-                      <Component id="txtViewVehicleId" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtViewServiceType" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtViewCost" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+                      <Component id="btnViewUpdate1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnViewSave" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnViewDelete" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnViewSave" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lblViewOwnerLastName" max="32767" attributes="0"/>
+                                  <Component id="lblViewServiceDate" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="lblViewOwnerFirstName" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="lblViewOwnerId" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtViewOwnerId" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  <Component id="txtViewOwnerFirstName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtViewOwnerLastName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtViewServiceDate" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="lblViewModel" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="lblViewYear" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="lblViewMake" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="lblViewVehicleId" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblViewRegistrationNum" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtViewMake" pref="200" max="32767" attributes="0"/>
+                                  <Component id="txtViewVehicleId" pref="200" max="32767" attributes="0"/>
+                                  <Component id="txtViewModel" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  <Component id="txtViewYear" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  <Component id="txtViewRegistrationNum" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="209" max="32767" attributes="0"/>
+              <EmptySpace pref="173" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnViewBack" min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblViewOwnerId" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtViewOwnerId" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewOwnerFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewOwnerFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewOwnerLastName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewOwnerLastName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewServiceDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewServiceDate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -73,20 +122,31 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblViewServiceType" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtViewServiceType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblViewMake" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewMake" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblViewCost" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtViewCost" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblViewModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewModel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnViewUpdate" pref="35" max="32767" attributes="0"/>
-                  <Component id="btnViewSave" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewYear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="259" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblViewRegistrationNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtViewRegistrationNum" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="83" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnViewDelete" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnViewSave" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnViewUpdate1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,44 +168,44 @@
         <Property name="text" type="java.lang.String" value="Owner ID :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblViewVehicleId">
+    <Component class="javax.swing.JLabel" name="lblViewOwnerFirstName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Vehicle ID :"/>
+        <Property name="text" type="java.lang.String" value="Owner First Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblViewServiceType">
+    <Component class="javax.swing.JLabel" name="lblViewOwnerLastName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Service Type :"/>
+        <Property name="text" type="java.lang.String" value="Owner Last Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblViewCost">
+    <Component class="javax.swing.JLabel" name="lblViewServiceDate">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cost :"/>
+        <Property name="text" type="java.lang.String" value="Service Date:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtViewOwnerId">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtViewVehicleId">
+    <Component class="javax.swing.JTextField" name="txtViewOwnerFirstName">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtViewServiceType">
+    <Component class="javax.swing.JTextField" name="txtViewOwnerLastName">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtViewCost">
+    <Component class="javax.swing.JTextField" name="txtViewServiceDate">
     </Component>
-    <Component class="javax.swing.JButton" name="btnViewUpdate">
+    <Component class="javax.swing.JButton" name="btnViewDelete">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Update"/>
+        <Property name="text" type="java.lang.String" value="Delete"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
@@ -153,7 +213,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewUpdateActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDeleteActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnViewSave">
@@ -168,6 +228,88 @@
           </Border>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewVehicleId">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Vehicle ID :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewMake">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Make : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewModel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Model:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewYear">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Year: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtViewYear">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtViewModel">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtViewMake">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtViewVehicleId">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewRegistrationNum">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Registration Number : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtViewRegistrationNum">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnViewBack">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;&lt;&lt; Back"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewBackActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnViewUpdate1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Update"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewUpdate1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

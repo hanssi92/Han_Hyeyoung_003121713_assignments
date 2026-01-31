@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Service;
 
+
 /**
  *
  * @author Hyungs
@@ -201,15 +202,13 @@ public class ServicesJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter valid cost and duration.", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
         Service s = serviceCatalog.addService();
-        
         s.setServiceId(serviceId);
         s.setServiceType(serviceType);
         s.setCost(cost);
         s.setMechanicName(mechanicName);
         s.setServiceDuration(serviceDuration);
-        
+
         JOptionPane.showMessageDialog(this, "Service sucessfully created.", "Information", JOptionPane.INFORMATION_MESSAGE);
         
         txtServiceId.setText("");

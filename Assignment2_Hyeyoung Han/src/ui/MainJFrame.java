@@ -212,38 +212,33 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void generateDemoData() {
         Vehicle newVehicle = vehicleDirectory.addVehicle();
-        Service newService = serviceCatalog.addService();
-        newService.setOwnerId("O-11112222");
-        newService.setVehicleId("HD-202501");
-        newService.setServiceType("Change Oil");
-        newService.setCost(100);
+        newVehicle.setOwnerId("O-11112222");
+        newVehicle.setVehicleId("HD-202501");
+        newVehicle.setServiceType("Change Oil");
+        newVehicle.setCost(100);
         
         Vehicle another2NewVehicle = vehicleDirectory.addVehicle();
-        Service another2NewService = serviceCatalog.addService();
-        another2NewService.setOwnerId("O-44445555");
-        another2NewService.setVehicleId("TO-202401");
-        another2NewService.setServiceType("Car Wash-Auto");
-        another2NewService.setCost(40);
+        another2NewVehicle.setOwnerId("O-44445555");
+        another2NewVehicle.setVehicleId("TO-202401");
+        another2NewVehicle.setServiceType("Car Wash-Auto");
+        another2NewVehicle.setCost(40);
         
         Vehicle another3NewVehicle = vehicleDirectory.addVehicle();
-        Service another3NewService = serviceCatalog.addService();
-        another3NewService.setOwnerId("O-77778888");
-        another3NewService.setVehicleId("HO-202102");
-        another3NewService.setServiceType("Maintenance");
-        another3NewService.setCost(60);
+        another3NewVehicle.setOwnerId("O-77778888");
+        another3NewVehicle.setVehicleId("HO-202102");
+        another3NewVehicle.setServiceType("Maintenance");
+        another3NewVehicle.setCost(60);
         
         Vehicle another4NewVehicle = vehicleDirectory.addVehicle();
-        Service another4NewService = serviceCatalog.addService();
-        another4NewService.setOwnerId("O-66665555");
-        another4NewService.setVehicleId("TS-202310");
-        another4NewService.setServiceType("Car Wash");
-        another4NewService.setCost(40);
+        another4NewVehicle.setOwnerId("O-66665555");
+        another4NewVehicle.setVehicleId("TS-202310");
+        another4NewVehicle.setServiceType("Car Wash");
+        another4NewVehicle.setCost(40);
         
         Vehicle another5NewVehicle = vehicleDirectory.addVehicle();
-        Service another5NewService = serviceCatalog.addService();
-        another5NewService.setOwnerId("O-33334444");
-        another5NewService.setVehicleId("BM-202104");
-        another5NewService.setServiceType("Change Oil");
-        another5NewService.setCost(100);
+        another5NewVehicle.setOwnerId("O-33334444");
+        another5NewVehicle.setVehicleId("BM-202104");
+        another5NewVehicle.setServiceType("Change Oil");
+        another5NewVehicle.setCost(100);
     }
 }

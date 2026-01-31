@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.Service;
+import model.Vehicle;
 
 /**
  *
@@ -62,6 +63,11 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         btnSearch.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnBack.setText("<<<Back");
@@ -82,7 +88,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Owner ID", "Vehicle ID", "Service Opted", "Cost"
+                "Owner ID", "Vehicle ID", "Service Type", "Cost"
             }
         ));
         jScrollPane1.setViewportView(tblManageVehicles);
@@ -97,7 +103,7 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         });
 
         btnDeleteAccount.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        btnDeleteAccount.setText("Delete Account");
+        btnDeleteAccount.setText("Delete");
         btnDeleteAccount.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDeleteAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,8 +183,8 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
             int dialogButton = JOptionPane.YES_NO_OPTION;
             int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the selected item?.", "Warning",dialogButton);
             if (dialogResult == JOptionPane.YES_OPTION) {
-                Service selectedService = (Service)tblManageVehicles.getValueAt(selectedRow, 0);
-                serviceCatalog.deleteService(selectedService);
+                Vehicle selectedVehicle = (Vehicle)tblManageVehicles.getValueAt(selectedRow, 0);
+                vehicleDirectory.deleteVehicle(selectedVehicle);
                 populateTable();
             }
         } else {
@@ -186,6 +192,12 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_btnDeleteAccountActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -204,13 +216,13 @@ public class ManageVehiclesJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblManageVehicles.getModel();
         model.setRowCount(0);
         
-        for (Service s : serviceCatalog.getService()) {
+        for (Vehicle v : vehicleDirectory.getVehicles()) {
             
             Object[] row = new Object[4];
-            row[0] = s.getOwnerId();
-            row[1] = s.getVehicleId();
-            row[2] = s.getServiceType();
-            row[3] = String.valueOf(s.getCost());
+            row[0] = v;
+            row[1] = v.getVehicleId();
+            row[2] = v.getServiceType();
+            row[3] = v.getCost();
             
             model.addRow(row);
         }

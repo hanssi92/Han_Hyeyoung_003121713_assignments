@@ -17,6 +17,11 @@ public class Vehicle {
     private String registrationNumber;
     
     private String ownerId;
+    private String ownerFirstName;
+    private String ownerLastName;
+    private String serviceDate;
+    private String serviceType;
+    private double cost;
 
     public String getVehicleId() {
         return vehicleId;
@@ -89,9 +94,27 @@ public class Vehicle {
     public void setServiceDate(String serviceDate) {
         this.serviceDate = serviceDate;
     }
-    private String ownerFirstName;
-    private String ownerLastName;
-    private String serviceDate;
-    
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+    return ownerId;
+}
+
 
 }

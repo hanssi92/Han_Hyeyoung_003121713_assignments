@@ -28,15 +28,27 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
 
         lblTitle = new javax.swing.JLabel();
         lblViewOwnerId = new javax.swing.JLabel();
-        lblViewVehicleId = new javax.swing.JLabel();
-        lblViewServiceType = new javax.swing.JLabel();
-        lblViewCost = new javax.swing.JLabel();
+        lblViewOwnerFirstName = new javax.swing.JLabel();
+        lblViewOwnerLastName = new javax.swing.JLabel();
+        lblViewServiceDate = new javax.swing.JLabel();
         txtViewOwnerId = new javax.swing.JTextField();
-        txtViewVehicleId = new javax.swing.JTextField();
-        txtViewServiceType = new javax.swing.JTextField();
-        txtViewCost = new javax.swing.JTextField();
-        btnViewUpdate = new javax.swing.JButton();
+        txtViewOwnerFirstName = new javax.swing.JTextField();
+        txtViewOwnerLastName = new javax.swing.JTextField();
+        txtViewServiceDate = new javax.swing.JTextField();
+        btnViewDelete = new javax.swing.JButton();
         btnViewSave = new javax.swing.JButton();
+        lblViewVehicleId = new javax.swing.JLabel();
+        lblViewMake = new javax.swing.JLabel();
+        lblViewModel = new javax.swing.JLabel();
+        lblViewYear = new javax.swing.JLabel();
+        txtViewYear = new javax.swing.JTextField();
+        txtViewModel = new javax.swing.JTextField();
+        txtViewMake = new javax.swing.JTextField();
+        txtViewVehicleId = new javax.swing.JTextField();
+        lblViewRegistrationNum = new javax.swing.JLabel();
+        txtViewRegistrationNum = new javax.swing.JTextField();
+        btnViewBack = new javax.swing.JButton();
+        btnViewUpdate1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -46,21 +58,21 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
         lblViewOwnerId.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         lblViewOwnerId.setText("Owner ID :");
 
-        lblViewVehicleId.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        lblViewVehicleId.setText("Vehicle ID :");
+        lblViewOwnerFirstName.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewOwnerFirstName.setText("Owner First Name:");
 
-        lblViewServiceType.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        lblViewServiceType.setText("Service Type :");
+        lblViewOwnerLastName.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewOwnerLastName.setText("Owner Last Name:");
 
-        lblViewCost.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        lblViewCost.setText("Cost :");
+        lblViewServiceDate.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewServiceDate.setText("Service Date:");
 
-        btnViewUpdate.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        btnViewUpdate.setText("Update");
-        btnViewUpdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnViewUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDelete.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        btnViewDelete.setText("Delete");
+        btnViewDelete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnViewDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewUpdateActionPerformed(evt);
+                btnViewDeleteActionPerformed(evt);
             }
         });
 
@@ -68,81 +80,181 @@ public class ViewDetailsJPanel extends javax.swing.JPanel {
         btnViewSave.setText("Save");
         btnViewSave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        lblViewVehicleId.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewVehicleId.setText("Vehicle ID :");
+
+        lblViewMake.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewMake.setText("Make : ");
+
+        lblViewModel.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewModel.setText("Model:");
+
+        lblViewYear.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewYear.setText("Year: ");
+
+        lblViewRegistrationNum.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblViewRegistrationNum.setText("Registration Number : ");
+
+        btnViewBack.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        btnViewBack.setText("<<< Back");
+        btnViewBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnViewBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewBackActionPerformed(evt);
+            }
+        });
+
+        btnViewUpdate1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        btnViewUpdate1.setText("Update");
+        btnViewUpdate1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnViewUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewUpdate1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitle)
-                        .addGap(357, 357, 357))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnViewUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(460, 460, 460))))
+                .addContainerGap()
+                .addComponent(btnViewBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitle)
+                .addGap(357, 357, 357))
             .addGroup(layout.createSequentialGroup()
-                .addGap(287, 287, 287)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblViewServiceType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblViewCost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblViewVehicleId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblViewOwnerId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtViewOwnerId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(txtViewVehicleId)
-                        .addComponent(txtViewServiceType)
-                        .addComponent(txtViewCost))
-                    .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(209, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(btnViewUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnViewDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lblViewOwnerLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblViewServiceDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblViewOwnerFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblViewOwnerId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(90, 90, 90)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtViewOwnerId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtViewOwnerFirstName)
+                                    .addComponent(txtViewOwnerLastName)
+                                    .addComponent(txtViewServiceDate)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(lblViewModel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblViewYear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblViewMake, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblViewVehicleId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblViewRegistrationNum))
+                                .addGap(60, 60, 60)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtViewMake, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtViewVehicleId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtViewModel, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtViewYear, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtViewRegistrationNum))))))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(lblTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnViewBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewOwnerId)
                     .addComponent(txtViewOwnerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblViewOwnerFirstName)
+                    .addComponent(txtViewOwnerFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblViewOwnerLastName)
+                    .addComponent(txtViewOwnerLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblViewServiceDate)
+                    .addComponent(txtViewServiceDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblViewVehicleId)
                     .addComponent(txtViewVehicleId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblViewServiceType)
-                    .addComponent(txtViewServiceType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblViewMake)
+                    .addComponent(txtViewMake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblViewCost)
-                    .addComponent(txtViewCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnViewUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(btnViewSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(259, Short.MAX_VALUE))
+                    .addComponent(lblViewModel)
+                    .addComponent(txtViewModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblViewYear)
+                    .addComponent(txtViewYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblViewRegistrationNum)
+                    .addComponent(txtViewRegistrationNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnViewDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewSave, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnViewUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewUpdateActionPerformed
+    private void btnViewDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewUpdateActionPerformed
+    }//GEN-LAST:event_btnViewDeleteActionPerformed
+
+    private void btnViewBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewBackActionPerformed
+
+    private void btnViewUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewUpdate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewUpdate1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnViewBack;
+    private javax.swing.JButton btnViewDelete;
     private javax.swing.JButton btnViewSave;
-    private javax.swing.JButton btnViewUpdate;
+    private javax.swing.JButton btnViewUpdate1;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblViewCost;
+    private javax.swing.JLabel lblViewMake;
+    private javax.swing.JLabel lblViewModel;
+    private javax.swing.JLabel lblViewOwnerFirstName;
     private javax.swing.JLabel lblViewOwnerId;
-    private javax.swing.JLabel lblViewServiceType;
+    private javax.swing.JLabel lblViewOwnerLastName;
+    private javax.swing.JLabel lblViewRegistrationNum;
+    private javax.swing.JLabel lblViewServiceDate;
     private javax.swing.JLabel lblViewVehicleId;
-    private javax.swing.JTextField txtViewCost;
+    private javax.swing.JLabel lblViewYear;
+    private javax.swing.JTextField txtViewMake;
+    private javax.swing.JTextField txtViewModel;
+    private javax.swing.JTextField txtViewOwnerFirstName;
     private javax.swing.JTextField txtViewOwnerId;
-    private javax.swing.JTextField txtViewServiceType;
+    private javax.swing.JTextField txtViewOwnerLastName;
+    private javax.swing.JTextField txtViewRegistrationNum;
+    private javax.swing.JTextField txtViewServiceDate;
     private javax.swing.JTextField txtViewVehicleId;
+    private javax.swing.JTextField txtViewYear;
     // End of variables declaration//GEN-END:variables
 }
