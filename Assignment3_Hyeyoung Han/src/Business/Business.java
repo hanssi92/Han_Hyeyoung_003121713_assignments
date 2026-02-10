@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Business;
+
+import Person.PersonDirectory;
+import Profile.EmployeeDirectory;
+import Profile.FacultyDirectory;
+import Profile.StudentDirectory;
+import UserAccount.UserAccountDirectory;
+
+/**
+ *
+ * @author Hyungs
+ */
+public class Business {
+    
+    String name;
+    PersonDirectory personDirectory;
+    
+    EmployeeDirectory employeeDirectory;
+    UserAccountDirectory userAccountDirectory;
+    StudentDirectory studentDirectory;
+    FacultyDirectory facultyDirectory;
+    
+    public Business (String n) {
+        name = n;
+        
+        personDirectory = new PersonDirectory();
+        employeeDirectory = new EmployeeDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        studentDirectory = new StudentDirectory();
+        facultyDirectory = new FacultyDirectory();
+        
+    }
+
+    public PersonDirectory getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public StudentDirectory getStudentDirectory() {
+        return studentDirectory;
+    }
+
+    public FacultyDirectory getFacultyDirectory() {
+        return facultyDirectory;
+    }
+    
+}
