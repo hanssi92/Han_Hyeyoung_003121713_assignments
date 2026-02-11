@@ -28,10 +28,10 @@ public class Business {
         name = n;
         
         personDirectory = new PersonDirectory();
-        employeeDirectory = new EmployeeDirectory();
+        employeeDirectory = new EmployeeDirectory(this);
         userAccountDirectory = new UserAccountDirectory();
-        studentDirectory = new StudentDirectory();
-        facultyDirectory = new FacultyDirectory();
+        studentDirectory = new StudentDirectory(this);
+        facultyDirectory = new FacultyDirectory(this);
         
     }
 

@@ -4,10 +4,39 @@
  */
 package Profile;
 
+import Business.Business;
+import Person.Person;
+import java.util.ArrayList;
+
 /**
  *
  * @author Hyungs
  */
 public class FacultyDirectory {
+    Business business;
+    ArrayList<FacultyProfile> facultyList;
     
+    public FacultyDirectory(Business d) {
+        business = d;
+        facultyList = new ArrayList<>();
+    }
+    
+    public FacultyProfile findFaculty(String id){
+        for (FacultyProfile fp : facultyList) {
+            if (fp.isMatch(id)) {
+                return fp;
+            }
+        }
+        return null;
+    }
+    
+    public ArrayList<FacultyProfile> getFacultyList() {
+        return facultyList;
+    }
+    
+    public FacultyProfile newFacutlyProfile(Person p) {
+        FacultyProfile fp = new FacultyProfile(p);
+        facultyList.add(fp);
+        return fp;
+    }
 }

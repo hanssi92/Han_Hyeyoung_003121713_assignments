@@ -4,6 +4,8 @@
  */
 package Profile;
 
+import Person.Person;
+
 /**
  *
  * @author Hyungs
@@ -13,10 +15,10 @@ package Profile;
 public class EmployeeProfile extends Profile {
     
     
-    public class EmployeeProfile(Person P) {
-        
+    public EmployeeProfile(Person p) {
         super(p);
     }
+    
     @Override
     public String getRole() {
         return "Admin";

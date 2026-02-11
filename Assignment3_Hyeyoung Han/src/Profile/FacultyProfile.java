@@ -4,10 +4,21 @@
  */
 package Profile;
 
+import Person.Person;
+
 /**
  *
  * @author Hyungs
  */
-public class FacultyProfile {
+public class FacultyProfile extends Profile {
+    
+    public FacultyProfile(Person p) {
+        super (p);
+    }
+    
+    @Override
+    public String getRole() {
+        return "Faculty";
+    }
     
 }
