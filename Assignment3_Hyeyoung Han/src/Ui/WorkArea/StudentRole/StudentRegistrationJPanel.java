@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Ui.WorkArea.FacultyRole.FacultyRoleWorkResp;
+package Ui.WorkArea.StudentRole;
 
 /**
  *
  * @author Hyungs
  */
-public class FacultyManagePersonJPanel extends javax.swing.JPanel {
+public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FacultyManagePersonJPanel
+     * Creates new form StudentRegistrationJPanel
      */
-    public FacultyManagePersonJPanel() {
+    public StudentRegistrationJPanel() {
         initComponents();
     }
 
@@ -29,23 +29,23 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
-        jLabel1.setText("My Profile");
+        jLabel1.setText("Registration");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(67, 67, 67)
                 .addComponent(jLabel1)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(594, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

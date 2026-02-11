@@ -26,19 +26,149 @@ public class AdminUserAccountJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
+        btnAdminBack = new javax.swing.JButton();
+        btnAdminUpdate = new javax.swing.JButton();
+        lblAdminUserName = new javax.swing.JLabel();
+        lblAdminPassword = new javax.swing.JLabel();
+        lblAdminStatus = new javax.swing.JLabel();
+        lblAdminRole = new javax.swing.JLabel();
+        lblAdminLastAcitivity = new javax.swing.JLabel();
+        lblLastUpdated = new javax.swing.JLabel();
+        txtAdminUserName = new javax.swing.JTextField();
+        txtAdminPassword = new javax.swing.JTextField();
+        txtAdminStatus = new javax.swing.JTextField();
+        txtAdminRole = new javax.swing.JTextField();
+        txtAdminLastActivity = new javax.swing.JTextField();
+        txtLastUpdated = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("Admin User Account");
+
+        btnAdminBack.setText("<<< Back");
+        btnAdminBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminBackActionPerformed(evt);
+            }
+        });
+
+        btnAdminUpdate.setText("Update >>>");
+
+        lblAdminUserName.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblAdminUserName.setText("User Name:");
+
+        lblAdminPassword.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblAdminPassword.setText("Password :");
+
+        lblAdminStatus.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblAdminStatus.setText("Status :");
+
+        lblAdminRole.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblAdminRole.setText("Role :");
+
+        lblAdminLastAcitivity.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblAdminLastAcitivity.setText("Last Activity :");
+
+        lblLastUpdated.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        lblLastUpdated.setText("Last Updated :");
+
+        txtAdminLastActivity.setEditable(false);
+
+        txtLastUpdated.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(btnAdminBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAdminUpdate)
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAdminUserName)
+                            .addComponent(lblAdminPassword)
+                            .addComponent(lblAdminStatus)
+                            .addComponent(lblAdminRole)
+                            .addComponent(lblAdminLastAcitivity)
+                            .addComponent(lblLastUpdated))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAdminUserName)
+                            .addComponent(txtAdminPassword)
+                            .addComponent(txtAdminStatus)
+                            .addComponent(txtAdminRole)
+                            .addComponent(txtAdminLastActivity)
+                            .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminUserName)
+                    .addComponent(txtAdminUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminPassword)
+                    .addComponent(txtAdminPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminStatus)
+                    .addComponent(txtAdminStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminRole)
+                    .addComponent(txtAdminRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAdminLastAcitivity)
+                    .addComponent(txtAdminLastActivity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLastUpdated)
+                    .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdminBack)
+                    .addComponent(btnAdminUpdate))
+                .addGap(58, 58, 58))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAdminBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdminBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdminBack;
+    private javax.swing.JButton btnAdminUpdate;
+    private javax.swing.JLabel lblAdminLastAcitivity;
+    private javax.swing.JLabel lblAdminPassword;
+    private javax.swing.JLabel lblAdminRole;
+    private javax.swing.JLabel lblAdminStatus;
+    private javax.swing.JLabel lblAdminUserName;
+    private javax.swing.JLabel lblLastUpdated;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtAdminLastActivity;
+    private javax.swing.JTextField txtAdminPassword;
+    private javax.swing.JTextField txtAdminRole;
+    private javax.swing.JTextField txtAdminStatus;
+    private javax.swing.JTextField txtAdminUserName;
+    private javax.swing.JTextField txtLastUpdated;
     // End of variables declaration//GEN-END:variables
 }

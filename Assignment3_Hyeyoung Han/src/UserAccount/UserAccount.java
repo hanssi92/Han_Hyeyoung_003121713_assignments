@@ -15,6 +15,7 @@ public class UserAccount {
     Profile profile;
     String userName;
     String password;
+    String lastLogin;
     
     public UserAccount (Profile profile, String un, String pw) {
         userName = un;
@@ -32,6 +33,14 @@ public class UserAccount {
     
     public String getPassword() {
         return password;
+    }
+    
+    public String getLastLogin() {
+        return lastLogin;
+    }
+    
+    public void setLastLogin(String lastLogin) {
+        this.lastLogin = lastLogin;
     }
     
         public boolean isMatch(String id) {

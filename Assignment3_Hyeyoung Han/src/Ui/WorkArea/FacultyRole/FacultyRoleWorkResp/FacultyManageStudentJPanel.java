@@ -8,12 +8,12 @@ package Ui.WorkArea.FacultyRole.FacultyRoleWorkResp;
  *
  * @author Hyungs
  */
-public class FacultyManagePersonJPanel extends javax.swing.JPanel {
+public class FacultyManageStudentJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FacultyManagePersonJPanel
+     * Creates new form FacultyManageStudentJPanel
      */
-    public FacultyManagePersonJPanel() {
+    public FacultyManageStudentJPanel() {
         initComponents();
     }
 
@@ -29,23 +29,23 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
-        jLabel1.setText("My Profile");
+        jLabel1.setText("Manage Student Profile");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addContainerGap(534, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

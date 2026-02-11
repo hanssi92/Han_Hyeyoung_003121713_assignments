@@ -26,19 +26,96 @@ public class StudentPortalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
+        btnStudentCourseWork = new javax.swing.JButton();
+        btnStudentManageProfile = new javax.swing.JButton();
+        btnStudentTranscript = new javax.swing.JButton();
+        btnStudentRegistration = new javax.swing.JButton();
+        btnGraduationAudit = new javax.swing.JButton();
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("My Student Portal");
+
+        btnStudentCourseWork.setBackground(new java.awt.Color(51, 153, 255));
+        btnStudentCourseWork.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudentCourseWork.setText("Course Work");
+        btnStudentCourseWork.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnStudentManageProfile.setBackground(new java.awt.Color(51, 153, 255));
+        btnStudentManageProfile.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudentManageProfile.setText("Mange Profile");
+        btnStudentManageProfile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStudentManageProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentManageProfileActionPerformed(evt);
+            }
+        });
+
+        btnStudentTranscript.setBackground(new java.awt.Color(51, 153, 255));
+        btnStudentTranscript.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudentTranscript.setText("Transcript");
+        btnStudentTranscript.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnStudentRegistration.setBackground(new java.awt.Color(51, 153, 255));
+        btnStudentRegistration.setForeground(new java.awt.Color(255, 255, 255));
+        btnStudentRegistration.setText("Registration");
+        btnStudentRegistration.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnGraduationAudit.setBackground(new java.awt.Color(51, 153, 255));
+        btnGraduationAudit.setForeground(new java.awt.Color(255, 255, 255));
+        btnGraduationAudit.setText("Graduation Audit");
+        btnGraduationAudit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(lblTitle)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnStudentCourseWork, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentManageProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentTranscript, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnStudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGraduationAudit, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(lblTitle)
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStudentCourseWork, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStudentManageProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGraduationAudit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(btnStudentTranscript, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnStudentManageProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManageProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStudentManageProfileActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGraduationAudit;
+    private javax.swing.JButton btnStudentCourseWork;
+    private javax.swing.JButton btnStudentManageProfile;
+    private javax.swing.JButton btnStudentRegistration;
+    private javax.swing.JButton btnStudentTranscript;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
