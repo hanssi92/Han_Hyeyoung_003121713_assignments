@@ -1,3 +1,18 @@
+
+
+import Business.Business;
+import Profile.EmployeeProfile;
+import Profile.FacultyProfile;
+import Profile.Profile;
+import Profile.StudentProfile;
+import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentPortalJPanel;
+import Ui.WorkAreaAdminRole.AdminRoleWorkAreaJPanel;
+import Ui.WorkAreaFacultyRole.FacultyWorkAreaJPanel;
+import UserAccount.UserAccount;
+import UserAccount.UserAccountDirectory;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +23,15 @@
  * @author Hyungs
  */
 public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
+    
+    Business business;
 
     /**
      * Creates new form ProfileWorkAreaMainJFrame
      */
     public ProfileWorkAreaMainJFrame() {
         initComponents();
+        business = ConfigureABusiness.initialize();
     }
 
     /**
@@ -52,6 +70,11 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         lblPassword.setText("Password:");
 
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnSignup.setText("Sign Up");
 
@@ -110,6 +133,59 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        String un = txtUserName.getText();
+        String pw = txtPassword.getText();
+        
+        UserAccountDirectory uad = business.getUserAccountDirectory();
+        UserAccount useraccount = uad.authenticate(un, pw);
+        if (useraccount == null) {
+            return;
+        }
+        
+        StudentPortalJPanel studentPortal;
+        FacultyWorkAreaJPanel facultyWorkArea;
+        AdminRoleWorkAreaJPanel adminRoleWorkArea;
+        String r = useraccount.getRole();
+        Profile profile = useraccount.getAssociatedPersonProfile();
+        
+        
+        if(un.isEmpty() || pw.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter User Name and Password.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        if (profile instanceof EmployeeProfile) {
+            adminRoleWorkArea = new AdminRoleWorkAreaJPanel (business, workAreaJPanel);
+            workAreaJPanel.removeAll();
+            workAreaJPanel.add("Admin", adminRoleWorkArea);
+            
+            CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+            layout.next(workAreaJPanel);
+        }
+        
+        if (profile instanceof StudentProfile) {
+            StudentProfile sp = (StudentProfile) profile;
+            studentPortal = new StudentPortalJPanel(business,  workAreaJPanel);
+            workAreaJPanel.removeAll();;
+            workAreaJPanel.add("Student", studentPortal);
+            
+            CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+            layout.next(workAreaJPanel);
+        }
+        
+        if (profile instanceof FacultyProfile) {
+            facultyWorkArea = new FacultyWorkAreaJPanel(business, workAreaJPanel);
+            workAreaJPanel.removeAll();
+            workAreaJPanel.add("Faculty", facultyWorkArea);
+            
+            CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+            layout.next(workAreaJPanel);
+        }
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments

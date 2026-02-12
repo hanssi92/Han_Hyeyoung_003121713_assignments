@@ -27,28 +27,34 @@ public class ConfigureABusiness {
         
         PersonDirectory pd = business.getPersonDirectory();
         
-        Person pAdmin = pd.newPerson("Will Smith");
-        Person pStudent = pd.newPerson("Adam Sandler");
-        Person pFaculty = pd.newPerson("Brad Pitt");
+        Person person001 = pd.newPerson("John Smith");
+        Person person002 = pd.newPerson("Gina Montana");
+        Person person003 = pd.newPerson("Adam Rollen");
+ 
+        Person person005 = pd.newPerson("Jim Dellon");
+        Person person006 = pd.newPerson("Anna Shnider");
+        Person person007 = pd.newPerson("Laura Brown");
+        Person person008 = pd.newPerson("Jack While");
+        Person person009 = pd.newPerson("Fidelity");
         
         EmployeeDirectory ed = business.getEmployeeDirectory();
         StudentDirectory sd = business.getStudentDirectory();
         FacultyDirectory fd = business.getFacultyDirectory();
         
-        EmployeeProfile adminProfile = ed.newEmployeeProfile(pAdmin);
-        StudentProfile studentProfile = sd.newStudentProfile(pStudent);
-        FacultyProfile facultyProfile = fd.newFacutlyProfile(pFaculty);
+        EmployeeProfile adminProfile = ed.newEmployeeProfile(person001);
+        StudentProfile studentProfile = sd.newStudentProfile(person003);
+        FacultyProfile facultyProfile = fd.newFacutlyProfile(person008);
         
         UserAccountDirectory uad = business.getUserAccountDirectory();
-        uad.newUserAccount(adminProfile, "admin", "admin");
-        uad.newUserAccount(studentProfile, "student", "student");
-        uad.newUserAccount(facultyProfile, "faculty", "faculty");
+        uad.newUserAccount(adminProfile, "admin", "****");
+        uad.newUserAccount(studentProfile, "student", "****");
+        uad.newUserAccount(facultyProfile, "faculty", "****");
         
         StudentAccount sa = new StudentAccount(studentProfile);
         sa.setMajor("Information System");
-        sa.setStudentNumber("S001");
+        sa.setNuId("00041212");
         sa.setYear("2026");
-        sa.setGpa(3.8);
+        sa.setName("Adam Sandler");
         
         return business;
     }

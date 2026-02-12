@@ -14,10 +14,10 @@ public class StudentAccount {
     
     StudentProfile studentProfile;
     
-    String major;
-    String studentNumber;
+    String name;
+    String nuId;
     String year;
-    double gpa;
+    String major;
     
     public StudentAccount(StudentProfile studentProfile) {
         this.studentProfile = studentProfile;
@@ -47,12 +47,12 @@ public class StudentAccount {
         this.major = major;
     }
     
-    public String getStudentNumber() {
-        return studentNumber;
+    public String getNuId () {
+        return nuId;
     }
     
-    public void setStudentNumber(String studentNumber) {
-        this.studentNumber = studentNumber;
+    public void setNuId (String nuId) {
+        this.nuId = nuId;
     }
     
     public String getYear() {
@@ -63,11 +63,12 @@ public class StudentAccount {
         this.year = year;
     }
     
-    public double getGpa() {
-        return gpa;
+    public String getName(String name) {
+        return name;
     }
     
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
+    public void setName (String name) {
+        this.name = name;
     }
+    
 }

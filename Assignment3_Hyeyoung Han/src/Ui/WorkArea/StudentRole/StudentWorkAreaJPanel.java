@@ -33,6 +33,10 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         txtStudentName = new javax.swing.JTextField();
         btnStudentBack = new javax.swing.JButton();
         lblStudentWelcome = new javax.swing.JLabel();
+        lblStudentYear = new javax.swing.JLabel();
+        lblStudentMajor = new javax.swing.JLabel();
+        txtStudentYear = new javax.swing.JTextField();
+        txtStudentMajor = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -50,6 +54,14 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         btnStudentBack.setText("<<< Back");
 
         lblStudentWelcome.setText("<Welcome Message>");
+
+        lblStudentYear.setText("Year :");
+
+        lblStudentMajor.setText("Major :");
+
+        txtStudentYear.setEditable(false);
+
+        txtStudentMajor.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -71,9 +83,15 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
                                 .addGap(97, 97, 97)
                                 .addComponent(txtStudentNUID, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblStudentName)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblStudentName)
+                                    .addComponent(lblStudentYear)
+                                    .addComponent(lblStudentMajor))
                                 .addGap(97, 97, 97)
-                                .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtStudentName, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(txtStudentYear)
+                                    .addComponent(txtStudentMajor)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(310, 310, 310)
                         .addComponent(lblStudentWelcome)))
@@ -96,18 +114,30 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblStudentName)
                     .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(363, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStudentYear)
+                    .addComponent(txtStudentYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStudentMajor)
+                    .addComponent(txtStudentMajor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnStudentBack;
+    private javax.swing.JLabel lblStudentMajor;
     private javax.swing.JLabel lblStudentNUID;
     private javax.swing.JLabel lblStudentName;
     private javax.swing.JLabel lblStudentWelcome;
+    private javax.swing.JLabel lblStudentYear;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtStudentMajor;
     private javax.swing.JTextField txtStudentNUID;
     private javax.swing.JTextField txtStudentName;
+    private javax.swing.JTextField txtStudentYear;
     // End of variables declaration//GEN-END:variables
 }
