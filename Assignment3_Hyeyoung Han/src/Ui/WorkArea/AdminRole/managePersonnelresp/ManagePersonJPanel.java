@@ -26,19 +26,112 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblManagePersonnelList = new javax.swing.JTable();
+        btnHrAdd = new javax.swing.JButton();
+        btnHrDelete = new javax.swing.JButton();
+        btnHrNext = new javax.swing.JButton();
+        btnHrBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("Manage Personnel (HR)");
+
+        tblManagePersonnelList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Name", "User Name", "Department", "Last Updated"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblManagePersonnelList);
+
+        btnHrAdd.setText("Add");
+        btnHrAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHrAddActionPerformed(evt);
+            }
+        });
+
+        btnHrDelete.setText("Delete");
+
+        btnHrNext.setText("Next >>>");
+
+        btnHrBack.setText("<<< Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnHrNext)
+                                .addGap(59, 59, 59))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnHrAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(128, 128, 128)
+                                .addComponent(btnHrDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnHrBack)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(btnHrBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTitle)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnHrAdd)
+                    .addComponent(btnHrDelete))
+                .addGap(38, 38, 38)
+                .addComponent(btnHrNext)
+                .addGap(196, 196, 196))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnHrAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHrAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHrAddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHrAdd;
+    private javax.swing.JButton btnHrBack;
+    private javax.swing.JButton btnHrDelete;
+    private javax.swing.JButton btnHrNext;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblManagePersonnelList;
     // End of variables declaration//GEN-END:variables
 }

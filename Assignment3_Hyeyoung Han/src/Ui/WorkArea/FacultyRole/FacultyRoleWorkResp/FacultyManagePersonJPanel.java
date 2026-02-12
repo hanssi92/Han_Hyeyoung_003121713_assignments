@@ -26,31 +26,112 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblFacultyName = new javax.swing.JLabel();
+        lblFacultyUserName = new javax.swing.JLabel();
+        lblFacultyDepartment = new javax.swing.JLabel();
+        lblFacultyRole = new javax.swing.JLabel();
+        txtFacultyName = new javax.swing.JTextField();
+        txtFacultyUserName = new javax.swing.JTextField();
+        txtFacultyDepartment = new javax.swing.JTextField();
+        txtFacultyRole = new javax.swing.JTextField();
+        btnFacultyBack = new javax.swing.JButton();
+        btnFacultyUpdate = new javax.swing.JButton();
+        btnFacultySave = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
-        jLabel1.setText("My Profile");
+        setBackground(new java.awt.Color(204, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("My Profile");
+
+        lblFacultyName.setText("Faculty Name :");
+
+        lblFacultyUserName.setText("User Name:");
+
+        lblFacultyDepartment.setText("Department : ");
+
+        lblFacultyRole.setText("Role: ");
+
+        btnFacultyBack.setText("<<< Back");
+
+        btnFacultyUpdate.setText("Update");
+
+        btnFacultySave.setText("Save");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitle)
+                .addGap(335, 335, 335))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblFacultyUserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFacultyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFacultyRole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFacultyDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFacultySave))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtFacultyName, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                        .addComponent(txtFacultyUserName)
+                        .addComponent(txtFacultyDepartment)
+                        .addComponent(txtFacultyRole))
+                    .addComponent(btnFacultyUpdate, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(231, 231, 231))
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(btnFacultyBack)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(btnFacultyBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitle)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFacultyName)
+                    .addComponent(txtFacultyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFacultyUserName)
+                    .addComponent(txtFacultyUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFacultyDepartment)
+                    .addComponent(txtFacultyDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFacultyRole)
+                    .addComponent(txtFacultyRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFacultyUpdate)
+                    .addComponent(btnFacultySave))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnFacultyBack;
+    private javax.swing.JButton btnFacultySave;
+    private javax.swing.JButton btnFacultyUpdate;
+    private javax.swing.JLabel lblFacultyDepartment;
+    private javax.swing.JLabel lblFacultyName;
+    private javax.swing.JLabel lblFacultyRole;
+    private javax.swing.JLabel lblFacultyUserName;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtFacultyDepartment;
+    private javax.swing.JTextField txtFacultyName;
+    private javax.swing.JTextField txtFacultyRole;
+    private javax.swing.JTextField txtFacultyUserName;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,31 +26,88 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblStudentNUID = new javax.swing.JLabel();
+        lblStudentName = new javax.swing.JLabel();
+        txtStudentNUID = new javax.swing.JTextField();
+        txtStudentName = new javax.swing.JTextField();
+        btnStudentBack = new javax.swing.JButton();
+        lblStudentWelcome = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
-        jLabel1.setText("Student Profile");
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("Student Profile");
+
+        lblStudentNUID.setText("NUID : ");
+
+        lblStudentName.setText("Name :");
+
+        txtStudentNUID.setEditable(false);
+
+        txtStudentName.setEditable(false);
+
+        btnStudentBack.setText("<<< Back");
+
+        lblStudentWelcome.setText("<Welcome Message>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1)
-                .addContainerGap(584, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(btnStudentBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblStudentNUID)
+                                .addGap(97, 97, 97)
+                                .addComponent(txtStudentNUID, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblStudentName)
+                                .addGap(97, 97, 97)
+                                .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(lblStudentWelcome)))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addContainerGap(527, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(btnStudentBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitle)
+                .addGap(38, 38, 38)
+                .addComponent(lblStudentWelcome)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStudentNUID)
+                    .addComponent(txtStudentNUID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblStudentName)
+                    .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnStudentBack;
+    private javax.swing.JLabel lblStudentNUID;
+    private javax.swing.JLabel lblStudentName;
+    private javax.swing.JLabel lblStudentWelcome;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtStudentNUID;
+    private javax.swing.JTextField txtStudentName;
     // End of variables declaration//GEN-END:variables
 }

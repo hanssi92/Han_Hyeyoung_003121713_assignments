@@ -22,47 +22,44 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="150" pref="150" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnAdministerUserAccount" pref="160" max="32767" attributes="0"/>
-                          <Component id="btnManageFaculty" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnMyProfile" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnRegisterHr" min="-2" pref="160" max="-2" attributes="0"/>
-                          <Component id="btnManageStudent" min="-2" pref="160" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="lblTitle" min="-2" pref="229" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="150" pref="150" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnAdministerUserAccount" pref="160" max="32767" attributes="0"/>
+                  <Component id="btnManageFaculty" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnMyProfile" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnRegisterHr" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Component id="btnManageStudent" min="-2" pref="160" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="211" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblTitle" min="-2" pref="229" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="lblTitle" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAdministerUserAccount" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="btnRegisterHr" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnManageFaculty" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="btnManageStudent" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="btnManageFaculty" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="btnMyProfile" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace pref="234" max="32767" attributes="0"/>
+              <EmptySpace pref="311" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

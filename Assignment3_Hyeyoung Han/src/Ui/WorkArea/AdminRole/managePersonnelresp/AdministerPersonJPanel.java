@@ -26,19 +26,114 @@ public class AdministerPersonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
+        lblEmployeeName = new javax.swing.JLabel();
+        lblEmployeeUserName = new javax.swing.JLabel();
+        lblEmployeePw = new javax.swing.JLabel();
+        lblEmployeeDept = new javax.swing.JLabel();
+        txtEmployeeName = new javax.swing.JTextField();
+        txtEmployeeUserName = new javax.swing.JTextField();
+        txtEmployeePw = new javax.swing.JTextField();
+        txtEmployeeDept = new javax.swing.JTextField();
+        btnEmployeeSave = new javax.swing.JButton();
+        btnEmployeeUpdate = new javax.swing.JButton();
+        btnEmployeeBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("Manage Person Profile");
+
+        lblEmployeeName.setText("Name :");
+
+        lblEmployeeUserName.setText("User Name :");
+
+        lblEmployeePw.setText("Password :");
+
+        lblEmployeeDept.setText("Department :");
+
+        btnEmployeeSave.setText("Save");
+
+        btnEmployeeUpdate.setText("Update");
+
+        btnEmployeeBack.setText("<<< Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEmployeeName)
+                            .addComponent(lblEmployeeUserName)
+                            .addComponent(lblEmployeePw)
+                            .addComponent(lblEmployeeDept))
+                        .addGap(128, 128, 128)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtEmployeeName, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(txtEmployeeUserName)
+                            .addComponent(txtEmployeePw)
+                            .addComponent(txtEmployeeDept)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(btnEmployeeSave)
+                        .addGap(119, 119, 119)
+                        .addComponent(btnEmployeeUpdate))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(btnEmployeeBack)))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(btnEmployeeBack)
+                .addGap(18, 18, 18)
+                .addComponent(lblTitle)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployeeName)
+                    .addComponent(txtEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployeeUserName)
+                    .addComponent(txtEmployeeUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployeePw)
+                    .addComponent(txtEmployeePw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployeeDept)
+                    .addComponent(txtEmployeeDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmployeeSave)
+                    .addComponent(btnEmployeeUpdate))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEmployeeBack;
+    private javax.swing.JButton btnEmployeeSave;
+    private javax.swing.JButton btnEmployeeUpdate;
+    private javax.swing.JLabel lblEmployeeDept;
+    private javax.swing.JLabel lblEmployeeName;
+    private javax.swing.JLabel lblEmployeePw;
+    private javax.swing.JLabel lblEmployeeUserName;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtEmployeeDept;
+    private javax.swing.JTextField txtEmployeeName;
+    private javax.swing.JTextField txtEmployeePw;
+    private javax.swing.JTextField txtEmployeeUserName;
     // End of variables declaration//GEN-END:variables
 }

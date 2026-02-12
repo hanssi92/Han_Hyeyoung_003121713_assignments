@@ -25,19 +25,125 @@ public class SignUpJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
+        lblNuId = new javax.swing.JLabel();
+        lblStudentName = new javax.swing.JLabel();
+        lblCreatePassword = new javax.swing.JLabel();
+        lblConfirmPassword = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
+        txtNuId = new javax.swing.JTextField();
+        txtStudentName = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
+        txtCreatePassword = new javax.swing.JTextField();
+        txtConfirmPassword = new javax.swing.JTextField();
+        btnStudentSave = new javax.swing.JButton();
+        btnStudentBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
+        lblTitle.setText("Registration Form");
+
+        lblNuId.setText("NUID: ");
+
+        lblStudentName.setText("Student Name: ");
+
+        lblCreatePassword.setText("Create Password: ");
+
+        lblConfirmPassword.setText("Confirm Password:");
+
+        lblUserName.setText("User Name:");
+
+        btnStudentSave.setText("Save");
+
+        btnStudentBack.setText("<<< Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(280, 280, 280)
+                            .addComponent(lblTitle))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(213, 213, 213)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNuId)
+                                .addComponent(lblStudentName))
+                            .addGap(101, 101, 101)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNuId, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                .addComponent(txtStudentName)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(btnStudentBack))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblUserName)
+                                .addComponent(lblCreatePassword)
+                                .addComponent(lblConfirmPassword))
+                            .addGap(85, 85, 85)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtUserName)
+                                .addComponent(txtCreatePassword)
+                                .addComponent(txtConfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(359, 359, 359)
+                        .addComponent(btnStudentSave)))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btnStudentBack)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(lblNuId))
+                    .addComponent(txtNuId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStudentName)
+                    .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUserName)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCreatePassword)
+                    .addComponent(txtCreatePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblConfirmPassword)
+                    .addComponent(txtConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addComponent(btnStudentSave)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnStudentBack;
+    private javax.swing.JButton btnStudentSave;
+    private javax.swing.JLabel lblConfirmPassword;
+    private javax.swing.JLabel lblCreatePassword;
+    private javax.swing.JLabel lblNuId;
+    private javax.swing.JLabel lblStudentName;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUserName;
+    private javax.swing.JTextField txtConfirmPassword;
+    private javax.swing.JTextField txtCreatePassword;
+    private javax.swing.JTextField txtNuId;
+    private javax.swing.JTextField txtStudentName;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
