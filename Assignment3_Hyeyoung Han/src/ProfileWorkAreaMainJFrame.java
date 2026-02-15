@@ -1,15 +1,16 @@
 
 
+import Ui.WorkArea.StudentRole.Student.SignUpJPanel;
 import Business.Business;
-import Profile.EmployeeProfile;
-import Profile.FacultyProfile;
-import Profile.Profile;
-import Profile.StudentProfile;
-import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentPortalJPanel;
-import Ui.WorkAreaAdminRole.AdminRoleWorkAreaJPanel;
-import Ui.WorkAreaFacultyRole.FacultyWorkAreaJPanel;
-import UserAccount.UserAccount;
-import UserAccount.UserAccountDirectory;
+import Business.Profile.EmployeeProfile;
+import Business.Profile.FacultyProfile;
+import Business.Profile.Profile;
+import Business.Profile.StudentProfile;
+import Ui.WorkArea.StudentRole.Student.StudentPortalJPanel;
+import Ui.WorkArea.AdminRole.Admin.AdminRoleWorkAreaJPanel;
+import Ui.WorkArea.FacultyRole.Faculty.FacultyWorkAreaJPanel;
+import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 
@@ -77,6 +78,11 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         });
 
         btnSignup.setText("Sign Up");
+        btnSignup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignupActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout actionJPanelLayout = new javax.swing.GroupLayout(actionJPanel);
         actionJPanel.setLayout(actionJPanelLayout);
@@ -137,13 +143,21 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String un = txtUserName.getText();
-        String pw = txtPassword.getText();
+        String pw = new String(txtPassword.getText());
+        
+        if(un.isEmpty() || pw.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter User Name and Password.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
         UserAccountDirectory uad = business.getUserAccountDirectory();
         UserAccount useraccount = uad.authenticate(un, pw);
         if (useraccount == null) {
+            JOptionPane.showMessageDialog(null, "Invalid user name or password", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        useraccount.setLastActivity(java.time.LocalDateTime.now().toString());
         
         StudentPortalJPanel studentPortal;
         FacultyWorkAreaJPanel facultyWorkArea;
@@ -152,14 +166,8 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         Profile profile = useraccount.getAssociatedPersonProfile();
         
         
-        if(un.isEmpty() || pw.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter User Name and Password.", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
         if (profile instanceof EmployeeProfile) {
-            adminRoleWorkArea = new AdminRoleWorkAreaJPanel (business, workAreaJPanel);
-            workAreaJPanel.removeAll();
+            adminRoleWorkArea = new AdminRoleWorkAreaJPanel (business, workAreaJPanel, useraccount);
             workAreaJPanel.add("Admin", adminRoleWorkArea);
             
             CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
@@ -168,8 +176,7 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         
         if (profile instanceof StudentProfile) {
             StudentProfile sp = (StudentProfile) profile;
-            studentPortal = new StudentPortalJPanel(business,  workAreaJPanel);
-            workAreaJPanel.removeAll();;
+            studentPortal = new StudentPortalJPanel(business,  workAreaJPanel, useraccount);
             workAreaJPanel.add("Student", studentPortal);
             
             CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
@@ -177,8 +184,7 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         }
         
         if (profile instanceof FacultyProfile) {
-            facultyWorkArea = new FacultyWorkAreaJPanel(business, workAreaJPanel);
-            workAreaJPanel.removeAll();
+            facultyWorkArea = new FacultyWorkAreaJPanel(business, workAreaJPanel, useraccount);
             workAreaJPanel.add("Faculty", facultyWorkArea);
             
             CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
@@ -186,6 +192,18 @@ public class ProfileWorkAreaMainJFrame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
+        // TODO add your handling code here:
+        
+        SignUpJPanel signUpPanel = new SignUpJPanel(business, workAreaJPanel);
+        
+        workAreaJPanel.add("SignUpJPanel", signUpPanel);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+
+    }//GEN-LAST:event_btnSignupActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,17 +4,57 @@
  */
 package Ui.WorkArea.FacultyRole.FacultyRoleWorkResp;
 
+import Business.Business;
+import Business.Profile.FacultyProfile;
+import Business.Profile.Profile;
+import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hyungs
  */
 public class ManageFacultyDirectoryJPanel extends javax.swing.JPanel {
+    
+    Business business;
+    JPanel workAreaJPanel;
+            
 
     /**
      * Creates new form ManageFacultyDirectoryJPanel
      */
-    public ManageFacultyDirectoryJPanel() {
+    public ManageFacultyDirectoryJPanel(Business business, JPanel workArea) {
         initComponents();
+        this.workAreaJPanel = workArea;
+        this.business = business;
+        
+        populateTable();
+    }
+        
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel)tblFacultyDirectory.getModel();
+        model.setRowCount(0);
+        
+        UserAccountDirectory uad = business.getUserAccountDirectory();
+        
+        for (UserAccount ua : uad.getUserAccountList()) {
+            Profile p = ua.getAssociatedPersonProfile();
+            
+            if (p instanceof FacultyProfile) {
+                FacultyProfile fp = (FacultyProfile) p;
+                
+                Object [] row = new Object[4];
+                row[0] = fp.getName();
+                row[1] = ua;
+                row[2] = fp.getDepartment();
+                row[3] = ua.getLastUpdated();
+                
+                model.addRow(row);
+            }
+        }
     }
 
     /**
@@ -38,26 +78,23 @@ public class ManageFacultyDirectoryJPanel extends javax.swing.JPanel {
 
         tblFacultyDirectory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "User Name"
+                "Name", "User Name", "Department", "Last Updated"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(tblFacultyDirectory);
 
         btnFacultyDirectoryBack.setText("<<< Back");
+        btnFacultyDirectoryBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyDirectoryBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -69,14 +106,15 @@ public class ManageFacultyDirectoryJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnFacultyDirectoryBack)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(btnFacultyDirectoryBack))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(293, 293, 293)
+                                .addComponent(lblTitle)))
+                        .addGap(0, 306, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(lblTitle)
-                .addContainerGap(312, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,6 +129,14 @@ public class ManageFacultyDirectoryJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnFacultyDirectoryBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyDirectoryBackActionPerformed
+        // TODO add your handling code here:
+        workAreaJPanel.remove(this);
+        CardLayout layout = (CardLayout)workAreaJPanel.getLayout();
+        layout.previous(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnFacultyDirectoryBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFacultyDirectoryBack;
@@ -98,4 +144,6 @@ public class ManageFacultyDirectoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblFacultyDirectory;
     // End of variables declaration//GEN-END:variables
+
+
 }

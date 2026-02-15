@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package UserAccount;
+package Business.UserAccount;
 
-import Profile.Profile;
+import Business.Profile.Profile;
 import java.util.ArrayList;
 
 /**
@@ -29,14 +29,17 @@ public class UserAccountDirectory {
         return ua;
     }
     
-    public UserAccount authenticate(String userName, String password) {
+    public UserAccount authenticate(String loginId, String password) {
         for (UserAccount ua : userAccountList) {
-            if(ua.getUserLoginName().equals(userName) &&
-                ua.getPassword().equals(password)) {
+            boolean idMatch = ua.getUserLoginName().equals(loginId) || (ua.getPersonId() !=null && ua.getPersonId().equals(loginId));
+            
+            if (idMatch && ua.getPassword().equals(password)) {
                 return ua;
             }
         }
         return null;
     }
+    
+    
     
 }

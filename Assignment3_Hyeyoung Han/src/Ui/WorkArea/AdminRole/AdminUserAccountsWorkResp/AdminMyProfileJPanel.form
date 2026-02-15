@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
-  <Properties>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-    </Property>
-  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -24,31 +19,31 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblTitle" min="-2" pref="277" max="-2" attributes="0"/>
+                  <Component id="lblTitle" alignment="0" min="-2" pref="277" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblAdminUserName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAdminPassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAdminStatus" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAdminRole" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAdminLastAcitivity" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblLastUpdated" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPUserName" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPRole" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPLastAcitivity" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAPLastUpdated" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtAdminUserName" max="32767" attributes="0"/>
-                              <Component id="txtAdminPassword" max="32767" attributes="0"/>
-                              <Component id="txtAdminStatus" max="32767" attributes="0"/>
-                              <Component id="txtAdminRole" max="32767" attributes="0"/>
-                              <Component id="txtAdminLastActivity" max="32767" attributes="0"/>
-                              <Component id="txtLastUpdated" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="txtAPUserName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPPassword" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPStatus" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPRole" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPLastActivity" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPLastUpdated" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnAdminBack" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="btnAPBack" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnAdminUpdate" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAPUpdate" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -63,38 +58,38 @@
               <Component id="lblTitle" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAdminUserName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAdminUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPUserName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAdminPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAdminPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAdminStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAdminStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPStatus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAdminRole" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAdminRole" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPRole" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPRole" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAdminLastAcitivity" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAdminLastActivity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPLastAcitivity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPLastActivity" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblLastUpdated" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtLastUpdated" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAPLastUpdated" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAPLastUpdated" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnAdminBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAdminUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAPBack" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAPUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="175" max="32767" attributes="0"/>
           </Group>
@@ -102,31 +97,43 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JTextField" name="txtAPPassword">
+    </Component>
     <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Admin User Account"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="My Profile"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAdminBack">
+    <Component class="javax.swing.JTextField" name="txtAPStatus">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAPBack">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;&lt;&lt; Back"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminBackActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAPBackActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAdminUpdate">
+    <Component class="javax.swing.JTextField" name="txtAPRole">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAPUpdate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update &gt;&gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminUpdateActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAPUpdateActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAdminUserName">
+    <Component class="javax.swing.JTextField" name="txtAPLastActivity">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAPUserName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -134,7 +141,12 @@
         <Property name="text" type="java.lang.String" value="User Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAdminPassword">
+    <Component class="javax.swing.JTextField" name="txtAPLastUpdated">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAPPassword">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -142,7 +154,7 @@
         <Property name="text" type="java.lang.String" value="Password :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAdminStatus">
+    <Component class="javax.swing.JLabel" name="lblAPStatus">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -150,7 +162,7 @@
         <Property name="text" type="java.lang.String" value="Status :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAdminRole">
+    <Component class="javax.swing.JLabel" name="lblAPRole">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -158,7 +170,7 @@
         <Property name="text" type="java.lang.String" value="Role :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAdminLastAcitivity">
+    <Component class="javax.swing.JLabel" name="lblAPLastAcitivity">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -166,7 +178,7 @@
         <Property name="text" type="java.lang.String" value="Last Activity :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblLastUpdated">
+    <Component class="javax.swing.JLabel" name="lblAPLastUpdated">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515;" size="14" style="0"/>
@@ -174,23 +186,7 @@
         <Property name="text" type="java.lang.String" value="Last Updated :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminUserName">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminPassword">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminStatus">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminRole">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminLastActivity">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtLastUpdated">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="txtAPUserName">
     </Component>
   </SubComponents>
 </Form>

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package UserAccount;
+package Business.UserAccount;
 
-import Profile.Profile;
+import Business.Profile.Profile;
 
 /**
  *
@@ -15,7 +15,10 @@ public class UserAccount {
     Profile profile;
     String userName;
     String password;
-    String lastLogin;
+    
+    String lastActivity;
+    String lastUpdated;
+    boolean enabled = true;
     
     public UserAccount (Profile profile, String un, String pw) {
         userName = un;
@@ -31,16 +34,45 @@ public class UserAccount {
         return userName;
     }
     
+    
     public String getPassword() {
         return password;
     }
     
-    public String getLastLogin() {
-        return lastLogin;
+    public void setPassword(String password) {
+        this.password = password;
     }
     
-    public void setLastLogin(String lastLogin) {
-        this.lastLogin = lastLogin;
+    public String getLastActivity () {
+        return lastActivity;
+    }
+    
+    public void setLastActivity (String lastActivity) {
+        this.lastActivity = lastActivity;
+    }
+    
+    public String getLastUpdated() {
+        return lastUpdated;
+    }
+    
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+    
+    public boolean isEnabled () {
+        return enabled;
+    }
+    
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+    
+    public String getStatus() {
+        return enabled ? "Enabled" : "Disabled" ;
+    }
+    
+    public void setStatus(boolean enabled) {
+        this.enabled = enabled;
     }
     
         public boolean isMatch(String id) {

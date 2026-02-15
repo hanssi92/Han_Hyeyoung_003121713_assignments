@@ -4,11 +4,11 @@
  */
 package Business;
 
-import Person.PersonDirectory;
-import Profile.EmployeeDirectory;
-import Profile.FacultyDirectory;
-import Profile.StudentDirectory;
-import UserAccount.UserAccountDirectory;
+import Business.Person.PersonDirectory;
+import Business.Profile.EmployeeDirectory;
+import Business.Profile.FacultyDirectory;
+import Business.Profile.StudentDirectory;
+import Business.UserAccount.UserAccountDirectory;
 
 /**
  *

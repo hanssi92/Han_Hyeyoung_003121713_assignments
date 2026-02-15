@@ -2,9 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Ui.WorkArea.StudentRole.StudentRoleWorkResp;
+package Ui.WorkArea.StudentRole.Student;
 
 import Business.Business;
+import Business.Profile.Profile;
+import Business.Profile.StudentProfile;
+import Business.UserAccount.UserAccount;
+import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentRegistrationJPanel;
+import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentWorkAreaJPanel;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -13,18 +20,24 @@ import javax.swing.JPanel;
  */
 public class StudentPortalJPanel extends javax.swing.JPanel {
     
-    JPanel workAreaJPanel;
     Business business;
+    JPanel workAreaJPanel;
+    UserAccount userAccount;
+   
 
     /**
      * Creates new form StudentPortalJPanel
      */
-    public StudentPortalJPanel(Business b, JPanel workArea) {
+    public StudentPortalJPanel(Business b, JPanel workArea, UserAccount userAccount) {
         initComponents();
         
         this.business = b;
         this.workAreaJPanel = workArea;
+        this.userAccount = userAccount;
+
     }
+        
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +64,11 @@ public class StudentPortalJPanel extends javax.swing.JPanel {
         btnStudentCourseWork.setForeground(new java.awt.Color(255, 255, 255));
         btnStudentCourseWork.setText("Course Work");
         btnStudentCourseWork.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStudentCourseWork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentCourseWorkActionPerformed(evt);
+            }
+        });
 
         btnStudentManageProfile.setBackground(new java.awt.Color(51, 153, 255));
         btnStudentManageProfile.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,16 +84,31 @@ public class StudentPortalJPanel extends javax.swing.JPanel {
         btnStudentTranscript.setForeground(new java.awt.Color(255, 255, 255));
         btnStudentTranscript.setText("Transcript");
         btnStudentTranscript.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStudentTranscript.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentTranscriptActionPerformed(evt);
+            }
+        });
 
         btnStudentRegistration.setBackground(new java.awt.Color(51, 153, 255));
         btnStudentRegistration.setForeground(new java.awt.Color(255, 255, 255));
         btnStudentRegistration.setText("Registration");
         btnStudentRegistration.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStudentRegistration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentRegistrationActionPerformed(evt);
+            }
+        });
 
         btnGraduationAudit.setBackground(new java.awt.Color(51, 153, 255));
         btnGraduationAudit.setForeground(new java.awt.Color(255, 255, 255));
         btnGraduationAudit.setText("Graduation Audit");
         btnGraduationAudit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGraduationAudit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraduationAuditActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,7 +152,41 @@ public class StudentPortalJPanel extends javax.swing.JPanel {
 
     private void btnStudentManageProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentManageProfileActionPerformed
         // TODO add your handling code here:
+        
+        StudentWorkAreaJPanel panel = new StudentWorkAreaJPanel (business, workAreaJPanel, userAccount);
+        
+        workAreaJPanel.add("StudentWorkAreaJPanel", panel);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.show(workAreaJPanel, "StudentWorkAreaJPanel");
+        
+
     }//GEN-LAST:event_btnStudentManageProfileActionPerformed
+
+    private void btnStudentCourseWorkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentCourseWorkActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnStudentCourseWorkActionPerformed
+
+    private void btnStudentRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentRegistrationActionPerformed
+        // TODO add your handling code here:
+        StudentRegistrationJPanel panel = new StudentRegistrationJPanel (business, workAreaJPanel);
+        
+        workAreaJPanel.add("StudentRegistrationJPanel", panel);
+        CardLayout layout = (CardLayout)workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnStudentRegistrationActionPerformed
+
+    private void btnGraduationAuditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraduationAuditActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnGraduationAuditActionPerformed
+
+    private void btnStudentTranscriptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentTranscriptActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnStudentTranscriptActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -130,4 +197,6 @@ public class StudentPortalJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnStudentTranscript;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
+
+
 }

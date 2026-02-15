@@ -2,9 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Ui.WorkAreaAdminRole;
+package Ui.WorkArea.AdminRole.Admin;
 
 import Business.Business;
+import Business.UserAccount.UserAccount;
+import Ui.WorkArea.AdminRole.AdminUserAccountsWorkResp.AdminMyProfileJPanel;
+import Ui.WorkArea.AdminRole.AdminUserAccountsWorkResp.ManageUserAccountJPanel;
+import Ui.WorkArea.AdminRole.managePersonnelresp.ManagePersonJPanel;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -15,15 +21,18 @@ public class AdminRoleWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel workAreaJPanel;
     Business business;
+    UserAccount userAccount;
 
     /**
      * Creates new form AdminRoleWorkAreaJPanel
      */
-    public AdminRoleWorkAreaJPanel(Business b, JPanel workArea) {
+    public AdminRoleWorkAreaJPanel(Business b, JPanel workArea, UserAccount ua) {
         initComponents();
         
         this.business = b;
         this.workAreaJPanel = workArea;
+        this.userAccount = ua;
+
     }
 
     /**
@@ -48,6 +57,11 @@ public class AdminRoleWorkAreaJPanel extends javax.swing.JPanel {
         btnAdministerUserAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAdministerUserAccount.setText("Administer User Account");
         btnAdministerUserAccount.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAdministerUserAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdministerUserAccountActionPerformed(evt);
+            }
+        });
 
         btnManageFaculty.setBackground(new java.awt.Color(51, 153, 255));
         btnManageFaculty.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,16 +77,31 @@ public class AdminRoleWorkAreaJPanel extends javax.swing.JPanel {
         btnMyProfile.setForeground(new java.awt.Color(255, 255, 255));
         btnMyProfile.setText("My Profile");
         btnMyProfile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnMyProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMyProfileActionPerformed(evt);
+            }
+        });
 
         btnRegisterHr.setBackground(new java.awt.Color(51, 153, 255));
         btnRegisterHr.setForeground(new java.awt.Color(255, 255, 255));
         btnRegisterHr.setText("Register Person (HR)");
         btnRegisterHr.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegisterHr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterHrActionPerformed(evt);
+            }
+        });
 
         btnManageStudent.setBackground(new java.awt.Color(51, 153, 255));
         btnManageStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnManageStudent.setText("Manage Student");
         btnManageStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnManageStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageStudentActionPerformed(evt);
+            }
+        });
 
         lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
         lblTitle.setText("Admin Portal");
@@ -121,7 +150,41 @@ public class AdminRoleWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageFacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageFacultyActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnManageFacultyActionPerformed
+
+    private void btnAdministerUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministerUserAccountActionPerformed
+        // TODO add your handling code here:
+        ManageUserAccountJPanel aos = new ManageUserAccountJPanel(business, workAreaJPanel);
+        
+        workAreaJPanel.add("ManageUserAccountJPanel", aos);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnAdministerUserAccountActionPerformed
+
+    private void btnRegisterHrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterHrActionPerformed
+        // TODO add your handling code here:
+        ManagePersonJPanel mp = new ManagePersonJPanel(business, workAreaJPanel,null);
+        
+        workAreaJPanel.add("ManagePersonJPanel", mp);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+    }//GEN-LAST:event_btnRegisterHrActionPerformed
+
+    private void btnMyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyProfileActionPerformed
+        // TODO add your handling code here:
+        AdminMyProfileJPanel panel = new AdminMyProfileJPanel (business, workAreaJPanel,userAccount);
+        
+        workAreaJPanel.add("AdminMyProfileJPanel", panel);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+    }//GEN-LAST:event_btnMyProfileActionPerformed
+
+    private void btnManageStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStudentActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnManageStudentActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

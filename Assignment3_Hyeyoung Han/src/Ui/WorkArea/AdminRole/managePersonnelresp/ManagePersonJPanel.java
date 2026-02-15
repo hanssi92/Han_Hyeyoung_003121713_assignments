@@ -4,18 +4,62 @@
  */
 package Ui.WorkArea.AdminRole.managePersonnelresp;
 
+import Business.Business;
+import Business.Profile.EmployeeProfile;
+import Ui.WorkArea.AdminRole.Admin.AdminRoleWorkAreaJPanel;
+import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hyungs
  */
 public class ManagePersonJPanel extends javax.swing.JPanel {
+    JPanel workAreaJPanel;
+    Business business;
+    UserAccount userAccount;
 
     /**
      * Creates new form ManagePersonJPanel
      */
-    public ManagePersonJPanel() {
+    public ManagePersonJPanel(Business b, JPanel workArea, UserAccount ua) {
         initComponents();
+        
+        this.business = b;
+        this.workAreaJPanel = workArea;
+        this.userAccount = ua;
+        
+        refreshTable();
+
     }
+    
+    public void refreshTable() {
+        DefaultTableModel model = (DefaultTableModel) tblManagePersonnelList.getModel();
+        model.setRowCount(0);
+        
+        UserAccountDirectory uad = business.getUserAccountDirectory();
+        
+        for (UserAccount ua : uad.getUserAccountList()) {
+            if (!(ua.getAssociatedPersonProfile() instanceof EmployeeProfile)) {
+                continue;
+            }
+            EmployeeProfile ep = (EmployeeProfile) ua.getAssociatedPersonProfile();
+            
+            Object[] row = new Object[4];
+            row[0] = ep.getName();
+            row[1] = ua;
+            row[2] = ep.getDepartment();
+            row[3] = ua.getLastUpdated();
+            
+            model.addRow(row);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,61 +112,119 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         });
 
         btnHrDelete.setText("Delete");
+        btnHrDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHrDeleteActionPerformed(evt);
+            }
+        });
 
         btnHrNext.setText("Next >>>");
+        btnHrNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHrNextActionPerformed(evt);
+            }
+        });
 
         btnHrBack.setText("<<< Back");
+        btnHrBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHrBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(lblTitle))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnHrNext)
-                                .addGap(59, 59, 59))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnHrAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(128, 128, 128)
-                                .addComponent(btnHrDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnHrBack)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnHrBack)
+                                .addGap(147, 147, 147)
+                                .addComponent(lblTitle))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(btnHrAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnHrDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnHrNext)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(btnHrBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHrBack)
+                    .addComponent(lblTitle))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHrAdd)
-                    .addComponent(btnHrDelete))
-                .addGap(38, 38, 38)
-                .addComponent(btnHrNext)
-                .addGap(196, 196, 196))
+                    .addComponent(btnHrDelete)
+                    .addComponent(btnHrNext))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHrAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHrAddActionPerformed
         // TODO add your handling code here:
+        AdministerPersonJPanel panel = new AdministerPersonJPanel(business, workAreaJPanel,null);
+        workAreaJPanel.add("AdministerPersonJPanel", panel);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
     }//GEN-LAST:event_btnHrAddActionPerformed
+
+    private void btnHrNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHrNextActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblManagePersonnelList.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        UserAccount ua = (UserAccount) tblManagePersonnelList.getValueAt(selectedRow, 1);
+        
+        AdministerPersonJPanel panel = new AdministerPersonJPanel (business, workAreaJPanel, ua);
+        workAreaJPanel.add("AdministerPersonJPanel", panel);
+        
+        CardLayout layout = (CardLayout)workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnHrNextActionPerformed
+
+    private void btnHrDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHrDeleteActionPerformed
+        // TODO add your handling code here:
+        int row = tblManagePersonnelList.getSelectedRow();
+        
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        UserAccount ua = (UserAccount) tblManagePersonnelList.getValueAt(row, 1);
+        UserAccountDirectory uad = business.getUserAccountDirectory();
+        uad.getUserAccountList().remove(ua);
+        
+        refreshTable();
+        
+    }//GEN-LAST:event_btnHrDeleteActionPerformed
+
+    private void btnHrBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHrBackActionPerformed
+        // TODO add your handling code here:
+        workAreaJPanel.remove(this);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.previous(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnHrBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -134,4 +236,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblManagePersonnelList;
     // End of variables declaration//GEN-END:variables
+
+
+
+
+
 }

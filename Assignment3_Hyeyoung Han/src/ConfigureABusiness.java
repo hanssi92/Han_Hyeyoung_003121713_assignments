@@ -1,15 +1,15 @@
 
 import Business.Business;
-import Person.Person;
-import Person.PersonDirectory;
-import Profile.EmployeeDirectory;
-import Profile.EmployeeProfile;
-import Profile.FacultyDirectory;
-import Profile.FacultyProfile;
-import Profile.StudentAccount;
-import Profile.StudentDirectory;
-import Profile.StudentProfile;
-import UserAccount.UserAccountDirectory;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.Profile.EmployeeDirectory;
+import Business.Profile.EmployeeProfile;
+import Business.Profile.FacultyDirectory;
+import Business.Profile.FacultyProfile;
+import Business.Profile.StudentAccount;
+import Business.Profile.StudentDirectory;
+import Business.Profile.StudentProfile;
+import Business.UserAccount.UserAccountDirectory;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

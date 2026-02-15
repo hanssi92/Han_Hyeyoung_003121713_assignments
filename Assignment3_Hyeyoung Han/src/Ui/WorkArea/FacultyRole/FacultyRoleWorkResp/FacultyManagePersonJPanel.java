@@ -4,17 +4,44 @@
  */
 package Ui.WorkArea.FacultyRole.FacultyRoleWorkResp;
 
+import Business.Business;
+import Business.Profile.FacultyProfile;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class FacultyManagePersonJPanel extends javax.swing.JPanel {
+    
+    JPanel workAreaJPanel;
+    Business business;
+    UserAccount userAccount;
 
     /**
      * Creates new form FacultyManagePersonJPanel
      */
-    public FacultyManagePersonJPanel() {
+    public FacultyManagePersonJPanel(Business b, JPanel workArea, UserAccount ua) {
         initComponents();
+        this.workAreaJPanel = workArea;
+        this.business = b;
+        this.userAccount = ua;
+        
+        populateFields();
+        setViewMode();
+    }
+       
+    private void populateFields() {
+        FacultyProfile fp = (FacultyProfile) userAccount.getAssociatedPersonProfile();
+        
+        txtFacultyName.setText(fp.getName());
+        txtFacultyUserName.setText(userAccount.getUserLoginName());
+        txtFacultyRole.setText(fp.getRole());
+        txtFacultyDepartment.setText(fp.getDepartment());
+
     }
 
     /**
@@ -53,52 +80,69 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
         lblFacultyRole.setText("Role: ");
 
         btnFacultyBack.setText("<<< Back");
+        btnFacultyBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyBackActionPerformed(evt);
+            }
+        });
 
         btnFacultyUpdate.setText("Update");
+        btnFacultyUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyUpdateActionPerformed(evt);
+            }
+        });
 
         btnFacultySave.setText("Save");
+        btnFacultySave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultySaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitle)
-                .addGap(335, 335, 335))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblFacultyUserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFacultyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFacultyRole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFacultyDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnFacultySave))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtFacultyName, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addComponent(txtFacultyUserName)
-                        .addComponent(txtFacultyDepartment)
-                        .addComponent(txtFacultyRole))
-                    .addComponent(btnFacultyUpdate, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(231, 231, 231))
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btnFacultyBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnFacultyBack)
+                        .addGap(170, 170, 170)
+                        .addComponent(lblTitle))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(172, 172, 172)
+                            .addComponent(btnFacultySave)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnFacultyUpdate))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(187, 187, 187)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblFacultyUserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblFacultyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblFacultyRole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblFacultyDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(45, 45, 45)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtFacultyUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFacultyName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFacultyDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFacultyRole, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(btnFacultyBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTitle)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFacultyName)
-                    .addComponent(txtFacultyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitle)
+                    .addComponent(btnFacultyBack))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFacultyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFacultyName))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFacultyUserName)
@@ -111,13 +155,50 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFacultyRole)
                     .addComponent(txtFacultyRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFacultyUpdate)
-                    .addComponent(btnFacultySave))
-                .addContainerGap(227, Short.MAX_VALUE))
+                    .addComponent(btnFacultySave)
+                    .addComponent(btnFacultyUpdate))
+                .addContainerGap(356, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnFacultyBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyBackActionPerformed
+        // TODO add your handling code here:
+        workAreaJPanel.remove(this);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.previous(workAreaJPanel);
+    }//GEN-LAST:event_btnFacultyBackActionPerformed
+
+    private void btnFacultySaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultySaveActionPerformed
+        // TODO add your handling code here:
+        String name = txtFacultyName.getText();
+        String department = txtFacultyDepartment.getText();
+        String role = txtFacultyRole.getText();
+        String un = txtFacultyUserName.getText();
+        
+        if (name.isEmpty() || department.isEmpty() || role.isEmpty() || un.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill out all required fields.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        FacultyProfile fp = (FacultyProfile) userAccount.getAssociatedPersonProfile();
+        fp.setName(name);
+        fp.setDepartment(department);
+        
+        userAccount.setLastUpdated(java.time.LocalDateTime.now().toString());
+        
+        JOptionPane.showMessageDialog(this, "Sucessfully saved.", "Infomration", JOptionPane.INFORMATION_MESSAGE);
+        
+        populateFields();
+        setViewMode();
+        
+    }//GEN-LAST:event_btnFacultySaveActionPerformed
+
+    private void btnFacultyUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyUpdateActionPerformed
+        // TODO add your handling code here:
+        setEditMode();
+    }//GEN-LAST:event_btnFacultyUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -134,4 +215,26 @@ public class FacultyManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtFacultyRole;
     private javax.swing.JTextField txtFacultyUserName;
     // End of variables declaration//GEN-END:variables
+
+    private void setViewMode() {
+         txtFacultyName.setEnabled(false);
+    txtFacultyDepartment.setEnabled(false);
+    txtFacultyUserName.setEnabled(false);
+    txtFacultyRole.setEnabled(false);
+
+    btnFacultySave.setEnabled(false);
+    btnFacultyUpdate.setEnabled(true);
+   }
+
+private void setEditMode() {
+    txtFacultyName.setEnabled(true);
+    txtFacultyDepartment.setEnabled(true);
+
+    txtFacultyUserName.setEnabled(false);
+    txtFacultyRole.setEnabled(false);
+
+    btnFacultySave.setEnabled(true);
+    btnFacultyUpdate.setEnabled(false);
+}
+
 }

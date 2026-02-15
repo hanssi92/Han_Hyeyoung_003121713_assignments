@@ -4,17 +4,52 @@
  */
 package Ui.WorkArea.AdminRole.AdminUserAccountsWorkResp;
 
+import Business.Business;
+import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hyungs
  */
 public class ManageUserAccountJPanel extends javax.swing.JPanel {
+    
+    JPanel workAreaJPanel;
+    Business business;
+    UserAccount selectedUserAccount;
 
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    public ManageUserAccountJPanel() {
+    public ManageUserAccountJPanel(Business b, JPanel workArea) {
         initComponents();
+        
+        this.business = b;
+        this.workAreaJPanel = workArea;
+        
+        refreshTable();
+
+    }
+        private void refreshTable() {
+            DefaultTableModel model = (DefaultTableModel) tblUserAccount.getModel();
+            model.setRowCount(0);
+            
+            UserAccountDirectory uad = business.getUserAccountDirectory();
+            
+            for(UserAccount ua : uad.getUserAccountList()) {
+                Object[] row = new Object [4];
+                
+                row[0] = ua;
+                row[1] = ua.getStatus();
+                row[2] = ua.getLastActivity();
+                row[3] = ua.getLastUpdated();
+                
+                model.addRow(row);
+            }
     }
 
     /**
@@ -31,7 +66,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUserAccount = new javax.swing.JTable();
         btnManageBack = new javax.swing.JButton();
-        btnManageUpdate = new javax.swing.JButton();
+        btnManageNext = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -55,8 +90,18 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblUserAccount);
 
         btnManageBack.setText("<<< Back");
+        btnManageBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageBackActionPerformed(evt);
+            }
+        });
 
-        btnManageUpdate.setText("Next >>>");
+        btnManageNext.setText("Next >>>");
+        btnManageNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageNextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -75,7 +120,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btnManageBack)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnManageUpdate))
+                                    .addComponent(btnManageNext))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -91,18 +136,48 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnManageBack)
-                    .addComponent(btnManageUpdate))
+                    .addComponent(btnManageNext))
                 .addContainerGap(197, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnManageNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNextActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblUserAccount.getSelectedRow();
+        
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Select a user first.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        UserAccount selectedUserAccount = (UserAccount) tblUserAccount.getValueAt(selectedRow, 0);
+        AdminUserAccountJPanel panel = new AdminUserAccountJPanel(workAreaJPanel, business, selectedUserAccount);
+        workAreaJPanel.add("AdminUserAccountJPanel", panel);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+        
+    }//GEN-LAST:event_btnManageNextActionPerformed
+
+    private void btnManageBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageBackActionPerformed
+        // TODO add your handling code here:
+        workAreaJPanel.remove(this);
+        
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnManageBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageBack;
-    private javax.swing.JButton btnManageUpdate;
+    private javax.swing.JButton btnManageNext;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUserAccounts;
     private javax.swing.JTable tblUserAccount;
     // End of variables declaration//GEN-END:variables
+
+
 }

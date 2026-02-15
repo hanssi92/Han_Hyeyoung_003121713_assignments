@@ -4,17 +4,48 @@
  */
 package Ui.WorkArea.AdminRole.AdminUserAccountsWorkResp;
 
+import Business.Business;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class AdminUserAccountJPanel extends javax.swing.JPanel {
+    
+    JPanel workArea;
+    Business business;
+    UserAccount userAccount;
 
     /**
      * Creates new form AdminUserAccountJPanel
      */
-    public AdminUserAccountJPanel() {
+    public AdminUserAccountJPanel(JPanel workArea, Business b, UserAccount ua) {
         initComponents();
+        this.workArea = workArea;
+        this.business = b;
+        this.userAccount = ua;
+        
+        populateFields();
+        
+    }
+    
+        private void populateFields() {
+            txtAdminUserName.setText(userAccount.getUserLoginName());
+            txtAdminPassword.setText(userAccount.getPassword());
+            txtAdminStatus.setText(userAccount.getStatus());
+            txtAdminRole.setText(userAccount.getRole());
+            txtAdminLastActivity.setText(userAccount.getLastActivity());
+            txtLastUpdated.setText(userAccount.getLastUpdated());
+            
+            txtAdminUserName.setEnabled(false);
+            txtAdminRole.setEnabled(false);
+            txtAdminLastActivity.setEnabled(false);
+            txtLastUpdated.setEnabled(false);
+            txtAdminPassword.setEnabled(true);
+            txtAdminStatus.setEnabled(true);
     }
 
     /**
@@ -87,41 +118,39 @@ public class AdminUserAccountJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 266, Short.MAX_VALUE)
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(257, 257, 257))
             .addGroup(layout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAdminUserName)
-                            .addComponent(lblAdminPassword)
-                            .addComponent(lblAdminStatus)
-                            .addComponent(lblAdminRole)
-                            .addComponent(lblAdminLastAcitivity)
-                            .addComponent(lblLastUpdated))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtAdminUserName)
-                            .addComponent(txtAdminPassword)
-                            .addComponent(txtAdminStatus)
-                            .addComponent(txtAdminRole)
-                            .addComponent(txtAdminLastActivity)
-                            .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdminBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAdminUpdate)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(158, 158, 158)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblAdminUserName)
+                                .addComponent(lblAdminPassword)
+                                .addComponent(lblAdminStatus)
+                                .addComponent(lblAdminRole)
+                                .addComponent(lblAdminLastAcitivity)
+                                .addComponent(lblLastUpdated))
+                            .addGap(33, 33, 33)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtAdminUserName)
+                                .addComponent(txtAdminPassword)
+                                .addComponent(txtAdminStatus)
+                                .addComponent(txtAdminRole)
+                                .addComponent(txtAdminLastActivity)
+                                .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnAdminBack, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAdminUpdate))))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(94, 94, 94)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAdminUserName)
                     .addComponent(txtAdminUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,10 +184,23 @@ public class AdminUserAccountJPanel extends javax.swing.JPanel {
 
     private void btnAdminBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminBackActionPerformed
         // TODO add your handling code here:
+        workArea.remove(this);
+        
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.next(workArea);
     }//GEN-LAST:event_btnAdminBackActionPerformed
 
     private void btnAdminUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminUpdateActionPerformed
         // TODO add your handling code here:
+        userAccount.setLastUpdated(java.time.LocalDateTime.now().toString());
+        userAccount.setPassword(txtAdminPassword.getText());
+        
+        ManageUserAccountJPanel managePanel = new ManageUserAccountJPanel(business,workArea);
+        workArea.add("ManageUserAccountJPanel", managePanel);
+        
+        CardLayout layout = (CardLayout)workArea.getLayout();
+        layout.next(workArea);
+
     }//GEN-LAST:event_btnAdminUpdateActionPerformed
 
 
@@ -179,4 +221,6 @@ public class AdminUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAdminUserName;
     private javax.swing.JTextField txtLastUpdated;
     // End of variables declaration//GEN-END:variables
+
+
 }

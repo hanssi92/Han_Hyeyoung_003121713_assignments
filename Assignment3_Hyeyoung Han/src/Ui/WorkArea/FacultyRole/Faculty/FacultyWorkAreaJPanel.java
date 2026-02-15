@@ -2,9 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Ui.WorkAreaFacultyRole;
+package Ui.WorkArea.FacultyRole.Faculty;
 
 import Business.Business;
+import Business.UserAccount.UserAccount;
+import Ui.WorkArea.FacultyRole.FacultyRoleWorkResp.FacultyManagePersonJPanel;
+import Ui.WorkArea.FacultyRole.FacultyRoleWorkResp.ManageFacultyDirectoryJPanel;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -13,17 +18,19 @@ import javax.swing.JPanel;
  */
 public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
     
-    JPanel workAreaJPanel;
     Business business;
+    JPanel workAreaJPanel;
+    UserAccount userAccount;
 
     /**
      * Creates new form FacultyWorkAreaJPanel
      */
-    public FacultyWorkAreaJPanel(Business b, JPanel workArea) {
+    public FacultyWorkAreaJPanel(Business b, JPanel workArea, UserAccount ua) {
         initComponents();
         
         this.business = b;
         this.workAreaJPanel = workArea;
+        this.userAccount = ua;
     }
 
     /**
@@ -38,37 +45,57 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnFacultyManageCourse = new javax.swing.JButton();
         btnFacultyProfile = new javax.swing.JButton();
-        btnFacultyStudentProfile = new javax.swing.JButton();
+        btnFacultyDirectory = new javax.swing.JButton();
         btnFacultyPerformReport = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
-        lblTitle.setText("My Faculty Profile");
+        lblTitle.setText("Faculty Portal");
 
         btnFacultyManageCourse.setBackground(new java.awt.Color(102, 153, 255));
         btnFacultyManageCourse.setFont(new java.awt.Font("맑은 고딕", 1, 12)); // NOI18N
         btnFacultyManageCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnFacultyManageCourse.setText("Manage Course");
         btnFacultyManageCourse.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFacultyManageCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyManageCourseActionPerformed(evt);
+            }
+        });
 
         btnFacultyProfile.setBackground(new java.awt.Color(102, 153, 255));
         btnFacultyProfile.setFont(new java.awt.Font("맑은 고딕", 1, 12)); // NOI18N
         btnFacultyProfile.setForeground(new java.awt.Color(255, 255, 255));
         btnFacultyProfile.setText("My Profile");
         btnFacultyProfile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFacultyProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyProfileActionPerformed(evt);
+            }
+        });
 
-        btnFacultyStudentProfile.setBackground(new java.awt.Color(102, 153, 255));
-        btnFacultyStudentProfile.setFont(new java.awt.Font("맑은 고딕", 1, 12)); // NOI18N
-        btnFacultyStudentProfile.setForeground(new java.awt.Color(255, 255, 255));
-        btnFacultyStudentProfile.setText("Manage Student Profile");
-        btnFacultyStudentProfile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFacultyDirectory.setBackground(new java.awt.Color(102, 153, 255));
+        btnFacultyDirectory.setFont(new java.awt.Font("맑은 고딕", 1, 12)); // NOI18N
+        btnFacultyDirectory.setForeground(new java.awt.Color(255, 255, 255));
+        btnFacultyDirectory.setText("Manage Faculty Directory");
+        btnFacultyDirectory.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFacultyDirectory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyDirectoryActionPerformed(evt);
+            }
+        });
 
         btnFacultyPerformReport.setBackground(new java.awt.Color(102, 153, 255));
         btnFacultyPerformReport.setFont(new java.awt.Font("맑은 고딕", 1, 12)); // NOI18N
         btnFacultyPerformReport.setForeground(new java.awt.Color(255, 255, 255));
         btnFacultyPerformReport.setText("Performance Report");
         btnFacultyPerformReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnFacultyPerformReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyPerformReportActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -77,17 +104,17 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(lblTitle))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnFacultyProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                             .addComponent(btnFacultyManageCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(83, 83, 83)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFacultyStudentProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                            .addComponent(btnFacultyPerformReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnFacultyDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                            .addComponent(btnFacultyPerformReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(lblTitle)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,7 +124,7 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(lblTitle)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFacultyStudentProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFacultyDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFacultyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -107,12 +134,42 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnFacultyPerformReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyPerformReportActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnFacultyPerformReportActionPerformed
+
+    private void btnFacultyManageCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyManageCourseActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "This button is not included in the assignment.", "Information", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnFacultyManageCourseActionPerformed
+
+    private void btnFacultyDirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyDirectoryActionPerformed
+        // TODO add your handling code here:
+        ManageFacultyDirectoryJPanel panel = new ManageFacultyDirectoryJPanel(business, workAreaJPanel);
+        
+        workAreaJPanel.add("ManageFacultyDirectoryJPanel", panel);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+
+    }//GEN-LAST:event_btnFacultyDirectoryActionPerformed
+
+    private void btnFacultyProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyProfileActionPerformed
+        // TODO add your handling code here:
+        FacultyManagePersonJPanel panel = new FacultyManagePersonJPanel(business, workAreaJPanel, userAccount);
+        
+        workAreaJPanel.add("FacultyManagePersonJPanel", panel);
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.next(workAreaJPanel);
+        
+    }//GEN-LAST:event_btnFacultyProfileActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFacultyDirectory;
     private javax.swing.JButton btnFacultyManageCourse;
     private javax.swing.JButton btnFacultyPerformReport;
     private javax.swing.JButton btnFacultyProfile;
-    private javax.swing.JButton btnFacultyStudentProfile;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

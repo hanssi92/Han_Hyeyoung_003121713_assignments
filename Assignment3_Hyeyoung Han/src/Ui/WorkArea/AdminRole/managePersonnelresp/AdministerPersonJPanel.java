@@ -4,18 +4,56 @@
  */
 package Ui.WorkArea.AdminRole.managePersonnelresp;
 
+import Business.Business;
+import Business.Person.Person;
+import Business.Profile.EmployeeProfile;
+import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Hyungs
  */
 public class AdministerPersonJPanel extends javax.swing.JPanel {
+    
+    JPanel workAreaJPanel;
+    Business business;
+    UserAccount userAccount;
 
     /**
      * Creates new form AdministerPersonJPanel
      */
-    public AdministerPersonJPanel() {
+    public AdministerPersonJPanel(Business b, JPanel workArea, UserAccount ua) {
         initComponents();
+        
+        this.business = b;
+        this.workAreaJPanel = workArea;
+        this.userAccount = ua;
+        
+        if (ua == null) {
+            btnEmployeeSave.setEnabled(true);
+            btnEmployeeUpdate.setEnabled(false);
+        } else {
+            btnEmployeeSave.setEnabled(false);
+            btnEmployeeUpdate.setEnabled(true);
+            populateFields();
+        }
     }
+    
+        private void populateFields() {
+            EmployeeProfile ep = (EmployeeProfile) userAccount.getAssociatedPersonProfile();
+            
+            txtEmployeeName.setText(ep.getName());
+            txtEmployeeDept.setText(ep.getDepartment());
+            txtEmployeeUserName.setText(userAccount.getUserLoginName());
+            txtEmployeePw.setText(userAccount.getPassword());
+            
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,10 +91,25 @@ public class AdministerPersonJPanel extends javax.swing.JPanel {
         lblEmployeeDept.setText("Department :");
 
         btnEmployeeSave.setText("Save");
+        btnEmployeeSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeSaveActionPerformed(evt);
+            }
+        });
 
         btnEmployeeUpdate.setText("Update");
+        btnEmployeeUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeUpdateActionPerformed(evt);
+            }
+        });
 
         btnEmployeeBack.setText("<<< Back");
+        btnEmployeeBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -121,6 +174,91 @@ public class AdministerPersonJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnEmployeeSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeSaveActionPerformed
+        // TODO add your handling code here:
+        String name = txtEmployeeName.getText();
+        String department = txtEmployeeDept.getText();
+        String un = txtEmployeeUserName.getText();
+        String pw = txtEmployeePw.getText();
+        
+        if(name.isEmpty() || department.isEmpty() || un.isEmpty() || pw.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill out all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        UserAccountDirectory uad = business.getUserAccountDirectory();
+        
+        for (UserAccount existing : uad.getUserAccountList()) {
+            if(existing.getUserLoginName().equalsIgnoreCase(un)) {
+                JOptionPane.showMessageDialog(null, "Username already exist", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        Person p = new Person(un);
+        
+        EmployeeProfile ep = business.getEmployeeDirectory().newEmployeeProfile(p);
+        ep.setName(name);
+        ep.setDepartment(department);
+        
+        UserAccount ua = new UserAccount(ep,un,pw);
+        uad.getUserAccountList().add(ua);
+        ua.setLastUpdated(java.time.LocalDateTime.now().toString());
+        
+        JOptionPane.showMessageDialog(this, "Successfully created", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
+        
+        txtEmployeeDept.setText("");
+        txtEmployeeName.setText("");
+        txtEmployeePw.setText("");
+        txtEmployeeUserName.setText("");
+        
+    }//GEN-LAST:event_btnEmployeeSaveActionPerformed
+    
+    private void btnEmployeeBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeBackActionPerformed
+        // TODO add your handling code here:
+        backAction();
+    }//GEN-LAST:event_btnEmployeeBackActionPerformed
+    private void backAction() {
+        workAreaJPanel.remove(this);
+        Component[] componentArray = workAreaJPanel.getComponents();
+        Component component = componentArray[componentArray.length-1];
+        ManagePersonJPanel mp = (ManagePersonJPanel) component;
+        mp.refreshTable();
+        CardLayout layout = (CardLayout) workAreaJPanel.getLayout();
+        layout.previous(workAreaJPanel);
+    }
+    private void btnEmployeeUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeUpdateActionPerformed
+        // TODO add your handling code here:
+        String name = txtEmployeeName.getText();
+        String department = txtEmployeeDept.getText();
+        String un = txtEmployeeUserName.getText();
+        String pw = txtEmployeePw.getText();
+        
+        if(name.isEmpty() || department.isEmpty() || un.isEmpty() || pw.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill out all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        EmployeeProfile ep = (EmployeeProfile) userAccount.getAssociatedPersonProfile();
+        ep.setName(name);
+        ep.setDepartment(department);
+        
+        userAccount.setPassword(pw);
+        userAccount.setLastUpdated(java.time.LocalDateTime.now().toString());
+        
+        
+        JOptionPane.showMessageDialog(this, "Successfully updated", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
+        
+        txtEmployeeDept.setText("");
+        txtEmployeeName.setText("");
+        txtEmployeePw.setText("");
+        txtEmployeeUserName.setText("");
+        
+        backAction();
+        
+    }//GEN-LAST:event_btnEmployeeUpdateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmployeeBack;
@@ -136,4 +274,7 @@ public class AdministerPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtEmployeePw;
     private javax.swing.JTextField txtEmployeeUserName;
     // End of variables declaration//GEN-END:variables
+
+
+
 }
