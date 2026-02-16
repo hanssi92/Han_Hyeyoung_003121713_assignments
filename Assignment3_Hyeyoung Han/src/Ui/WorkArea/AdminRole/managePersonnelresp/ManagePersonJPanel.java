@@ -6,11 +6,9 @@ package Ui.WorkArea.AdminRole.managePersonnelresp;
 
 import Business.Business;
 import Business.Profile.EmployeeProfile;
-import Ui.WorkArea.AdminRole.Admin.AdminRoleWorkAreaJPanel;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
-import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;

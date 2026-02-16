@@ -5,8 +5,6 @@
 package Ui.WorkArea.StudentRole.Student;
 
 import Business.Business;
-import Business.Profile.Profile;
-import Business.Profile.StudentProfile;
 import Business.UserAccount.UserAccount;
 import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentRegistrationJPanel;
 import Ui.WorkArea.StudentRole.StudentRoleWorkResp.StudentWorkAreaJPanel;

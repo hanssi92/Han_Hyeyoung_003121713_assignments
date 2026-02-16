@@ -75,6 +75,8 @@ public class AdminMyProfileJPanel extends javax.swing.JPanel {
         lblAPLastUpdated = new javax.swing.JLabel();
         txtAPUserName = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("My Profile");
