@@ -5,7 +5,15 @@
 package UserInterface.ManageTheBusiness;
 
 import TheBusiness.Business.Business;
+import TheBusiness.CustomerManagement.CustomerProfile;
+import TheBusiness.OrderManagement.Order;
+import TheBusiness.OrderManagement.OrderItem;
+import TheBusiness.ProductManagement.Product;
+import TheBusiness.ProductManagement.ProductCatalog;
+import TheBusiness.Supplier.Supplier;
+import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -143,13 +151,163 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
 
     private void populateMostExpensiveProductsTable() {
         
+        DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
+        // Clear JTable
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        
+        // Create Column
+        model.addColumn("Product Name");
+        model.addColumn("Supplier Name"); 
+        model.addColumn("Product Price");
+        
+        ArrayList<Object[]> rows = new ArrayList<>();
+        
+        // Validate supplier information
+        for (Supplier supplier : business.getSupplierDirectory().getSuplierList()) {
+            
+            ProductCatalog productcatalog = supplier.getProductCatalog();
+            
+            // Retrieve products from all suppliers
+            for (Product product : productcatalog.getProductList()) {
+                
+                Object[] row = new Object[3];
+                row[0] = product.toString();
+                row[1] = supplier.getName();
+                row[2] = product.getCeilingPrice(); // Most expensive products based in ceiling price
+                
+                rows.add(row);
+            }
+        }
+        // Sort product by price(highest to lowest)
+        rows.sort((row1,row2) -> Integer.compare((Integer) row2[2], (Integer) row1[2]));
+        
+        for (Object[] row : rows) {
+            model.addRow(row);
+        }
     }
 
     private void populateMostValuableCustomersTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
+        // Clear JTable
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        
+        model.addColumn("Customer Name");
+        model.addColumn("Total Sales");
+        
+        ArrayList<Object[]> rows = new ArrayList<>();
+        
+        for (CustomerProfile customer : business.getCustomerDirectory().getCustomerList()) {
+            
+            int totalSales = 0;
+            
+            for (Order order : business.getMasterOrderList().getOrders()) {
+                
+                if (order.getCustomer() == customer) {
+                    totalSales += order.getOrderTotal();
+                }
+            }
+            
+            Object[] row = new Object [2];
+            row[0] = customer.toString();
+            row[1] = totalSales;
+            
+            rows.add(row);
+        }
+        rows.sort((row1,row2) -> Integer.compare((Integer) row2[2], (Integer) row1[2]));
+        
+        for (Object[] row : rows) {
+            model.addRow(row);  
     }
+}
+        
 
     private void populateSupplierSummaryTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
+        // Clear JTable
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        
+        model.addColumn("Supplier Name");
+        model.addColumn("Total Sales");
+        model.addColumn("Loyalty Score");
+        model.addColumn("Average Spending per Customer");
+        model.addColumn("Top 5 Sales Score");
+        
+        ArrayList<Object[]> rows = new ArrayList<>();
+        
+        for (Supplier supplier : business.getSupplierDirectory().getSuplierList()) {
+            
+            int totalSales = 0;
+            
+            java.util.HashMap<TheBusiness.CustomerManagement.CustomerProfile, Integer> customerSalesMap = new java.util.HashMap<>();
+            
+            for (Order order : business.getMasterOrderList().getOrders()) {
+                
+                for (OrderItem oi : order.getOrderitems()) {
+                    
+                    Product product = oi.getSelectedProduct();
+                    
+                    if (supplier.getProductCatalog().getProductList().contains(product)) {
+                        
+                        int itemTotal = oi.getOrderItemTotal();
+                        totalSales += itemTotal;
+                        
+                        CustomerProfile customer = order.getCustomer();
+                        
+                        if (customerSalesMap.containsKey(customer)) {
+                            customerSalesMap.put(customer, customerSalesMap.get(customer) + itemTotal);
+                        
+                        }else {
+                            customerSalesMap.put(customer, itemTotal);
+                        }
+                    }
+                }
+            }
+            
+            int distinctCustomers = customerSalesMap.size();
+            
+            double loyaltyScore = 0.0;
+            double averageSpending = 0.0;
+            double top5SalesScore = 0.0;
+            
+            int totalCustomerCount = business.getCustomerDirectory().getCustomerList().size();
+            
+            if (totalCustomerCount > 0) {
+                loyaltyScore = (double) totalSales/ distinctCustomers;
+            }
+            
+            if (distinctCustomers > 0) {
+                averageSpending = (double) totalSales/distinctCustomers;
+            }
+            
+            ArrayList<Integer> saleList = new ArrayList<>(customerSalesMap.values());
+            salesList.sort((a,b) -> Integer.compare(b, a));
+            
+            int top5Total = 0;
+            for (int i = 0; i < salesList.size() && i<5; i++) {
+                top5Total += salesList.get(1);
+            }
+            
+            if (top5Sales > 0) {
+                top5SalesScore = (double) top5Total / totalSales;
+            }
+            
+            Object[] row = new Object[5];
+            row[0] = supplier.getName();
+            row[1] = totalSales;
+            row[2] = String.format("%.2f", loyaltyScore);
+            row[3] = String.format("%.2f", averageSpending);
+            row[4] = String.format("%.2f", top5SalesScore);
+            
+            rows.add(row);
+        }
+        
+        rows.sort((row1,row2) -> Integer.compare((Integer) row2[2], (Integer) row1[2]));
+        
+        for (Object[] row : rows) {
+            model.addRow(row);  
     }
 }
