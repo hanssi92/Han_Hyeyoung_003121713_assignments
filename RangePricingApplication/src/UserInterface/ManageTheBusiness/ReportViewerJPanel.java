@@ -16,7 +16,15 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * ReportViewerJPanel displays different performance reports using a JTable
+ * The user selects the report type from a dropdown(cmbReport)
+ * and the corresponding report is populate in the table
+ * 
+ * Available Reports;
+ * 1. Most Expensive Products
+ * 2. Most Valuable Customer
+ * 3. Supplier Summary Report
+ * 
  * @author Hyungs
  */
 public class ReportViewerJPanel extends javax.swing.JPanel {
@@ -153,6 +161,7 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblReport;
     // End of variables declaration//GEN-END:variables
 
+    // check which report is selected in the dropdown and calls the corresponding populate method to display the report data.
     private void refreshTable() {
         
         String selectedReport = String.valueOf(cmbReport.getSelectedItem()); //Extract the report by selecting item in combobox
@@ -168,6 +177,8 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
         }
     }
 
+    // Displays the most expensive products from all suppliers.
+    // Products are sorted from highest price to lowest price.
     private void populateMostExpensiveProductsTable() {
         
         DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
@@ -205,7 +216,8 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
-
+    
+    // Caculate total sales for each customer based on all orders.
     private void populateMostValuableCustomersTable() {
         DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
         // Clear JTable
@@ -241,7 +253,7 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
     }
 }
         
-
+    // Generate summary report for each supplier
     private void populateSupplierSummaryTable() {
         
         DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
