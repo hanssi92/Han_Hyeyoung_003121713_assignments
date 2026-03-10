@@ -23,6 +23,7 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
     
     JPanel CardSequencePanel;
     Business business;
+    
 
     /**
      * Creates new form ReportViewerJPanel
@@ -32,20 +33,14 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
         
         this.CardSequencePanel = CardSequencePanel;
         this.business = business;
-        
+
         cmbReport.removeAllItems();
         cmbReport.addItem("Most Expensive Products");
         cmbReport.addItem("Most Valuable Customers");
         cmbReport.addItem("Supplier Summary");
         
         refreshTable();
-
     }
-    
-    private void cmbReportActionPerformed(java.awt.event.ActionEvent evt) {
-        refreshTable();
-        
-        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,6 +67,11 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
         lblSelectReport.setText("Select Report: ");
 
         cmbReport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Most Expensive Products", "Most Valuable Customers", "Supplier Summary", " " }));
+        cmbReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbReportActionPerformed(evt);
+            }
+        });
 
         tblReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,6 +87,11 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblReport);
 
         btnBack.setText("<<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,6 +128,20 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
                 .addContainerGap(295, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        
+        CardSequencePanel.remove(this);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel);
+        
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void cmbReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbReportActionPerformed
+        // TODO add your handling code here:
+        
+        refreshTable();
+    }//GEN-LAST:event_cmbReportActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,7 +234,7 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
             
             rows.add(row);
         }
-        rows.sort((row1,row2) -> Integer.compare((Integer) row2[2], (Integer) row1[2]));
+        rows.sort((row1,row2) -> Integer.compare((Integer) row2[1], (Integer) row1[1]));
         
         for (Object[] row : rows) {
             model.addRow(row);  
@@ -276,22 +295,22 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
             int totalCustomerCount = business.getCustomerDirectory().getCustomerList().size();
             
             if (totalCustomerCount > 0) {
-                loyaltyScore = (double) totalSales/ distinctCustomers;
+                loyaltyScore = (double) distinctCustomers/ totalCustomerCount;
             }
             
             if (distinctCustomers > 0) {
                 averageSpending = (double) totalSales/distinctCustomers;
             }
             
-            ArrayList<Integer> saleList = new ArrayList<>(customerSalesMap.values());
-            salesList.sort((a,b) -> Integer.compare(b, a));
+            ArrayList<Integer> salesList = new ArrayList<>(customerSalesMap.values());
+            java.util.Collections.sort(salesList, java.util.Collections.reverseOrder());
             
             int top5Total = 0;
             for (int i = 0; i < salesList.size() && i<5; i++) {
                 top5Total += salesList.get(1);
             }
             
-            if (top5Sales > 0) {
+            if (top5Total > 0 && totalSales > 0) {
                 top5SalesScore = (double) top5Total / totalSales;
             }
             
@@ -305,9 +324,10 @@ public class ReportViewerJPanel extends javax.swing.JPanel {
             rows.add(row);
         }
         
-        rows.sort((row1,row2) -> Integer.compare((Integer) row2[2], (Integer) row1[2]));
+        rows.sort((row1,row2) -> Double.compare(Double.parseDouble((String) row2[2]), Double.parseDouble((String)row1[2])));
         
-        for (Object[] row : rows) {
-            model.addRow(row);  
+            for (Object[] row : rows) {
+               model.addRow(row);  
+    }
     }
 }

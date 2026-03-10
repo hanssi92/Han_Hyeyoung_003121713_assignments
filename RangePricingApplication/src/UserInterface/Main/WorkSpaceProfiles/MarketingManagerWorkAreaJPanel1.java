@@ -12,7 +12,9 @@ package UserInterface.Main.WorkSpaceProfiles;
 
 import TheBusiness.Business.Business;
 import UserInterface.ManageTheBusiness.ManageTheBusinessJPanel;
+import UserInterface.ManageTheBusiness.ReportViewerJPanel;
 import UserInterface.ProductManagement.ManageSuppliersJPanel;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -182,11 +184,10 @@ public class MarketingManagerWorkAreaJPanel1 extends javax.swing.JPanel {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
 
-        CardSequencePanel.removeAll();
-//        ManageIncidents aos = new  ManageIncidents(businessunit, CardSequencePanel);
-        // aos.setAgenda(businessunit.getRiskManagementAgenda());
-//        CardSequencePanel.add("RiskAgendaObjectives", aos);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        ReportViewerJPanel panel = new ReportViewerJPanel(CardSequencePanel, business);
+        CardSequencePanel.add("ReportViewerJPanel", panel);
+        CardLayout layout = (CardLayout) CardSequencePanel.getLayout();
+        layout.next(CardSequencePanel);;
 }//GEN-LAST:event_jButton11ActionPerformed
 
 
